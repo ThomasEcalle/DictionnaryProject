@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1477242517 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\main.c
+	<stdio.h>
+	<stdlib.h>
+	"constantes.h"
+
+1477243086 c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\constantes.h
+
