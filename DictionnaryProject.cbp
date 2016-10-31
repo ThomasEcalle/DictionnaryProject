@@ -31,13 +31,32 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="Model/test.c">
+		<Unit filename="constantes.h" />
+		<Unit filename="controller_active_dictionary.h" />
+		<Unit filename="controller_main_menu.h" />
+		<Unit filename="controllers/controller_active_dictionary.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="constantes.h">
-			<Option target="&lt;{~None~}&gt;" />
+		<Unit filename="controllers/controller_main_menu.c">
+			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="tests/main1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="tests/main2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="tests/main3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="tests/main4.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="view_main_menu.h" />
+		<Unit filename="views/view_main_menu.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>
