@@ -1,12 +1,13 @@
 # depslib dependency file v1.0
-1478465631 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\main.c
+1478557936 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\main.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 	"constantes.h"
 	"controller_main_menu.h"
 	"controller_active_dictionary.h"
 
-1477239486 c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\constantes.h
+1478557373 c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\constantes.h
 
 1477901340 source:c:\users\jean\documents\github\dictionnaryproject\controllers\controller_active_dictionary.c
 
@@ -61,13 +62,13 @@
 
 1478465631 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\controllers\controller_active_dictionary.c
 
-1478465631 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\controllers\controller_main_menu.c
+1478557660 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\controllers\controller_main_menu.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"
 	"../view_main_menu.h"
 
-1478465631 c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\view_main_menu.h
+1478557128 c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\view_main_menu.h
 
 1478465631 c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\controller_main_menu.h
 	<stdio.h>
@@ -96,7 +97,7 @@
 	<stdlib.h>
 	"../constantes.h"
 
-1478465631 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\views\view_main_menu.c
+1478558516 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\views\view_main_menu.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"
