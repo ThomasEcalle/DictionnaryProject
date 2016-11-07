@@ -14,7 +14,7 @@ int main()
 
     }
     else{
-
+        initMainMenu(0);
     }
     return 0;
 }

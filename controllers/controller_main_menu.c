@@ -5,9 +5,6 @@
 
 
 void initMainMenu(int* isAFileSelected){
-    int userChoice;
-    while(*isAFileSelected != 1){
-        propositions(&userChoice);
-        printf("%d", userChoice);
-    }
+   printf("okok");
+
 }
