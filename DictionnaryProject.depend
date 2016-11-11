@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1478557936 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\main.c
+1478876069 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -63,7 +63,7 @@
 
 1478465631 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\controllers\controller_active_dictionary.c
 
-1478557660 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\controllers\controller_main_menu.c
+1478876069 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\controllers\controller_main_menu.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"
@@ -98,7 +98,7 @@
 	<stdlib.h>
 	"../constantes.h"
 
-1478558516 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\views\view_main_menu.c
+1478876069 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\views\view_main_menu.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"
