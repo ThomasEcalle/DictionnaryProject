@@ -19,9 +19,10 @@
 
 1478873611 c:\users\jean\documents\github\dictionnaryproject\constantes.h
 
-1478529637 source:c:\users\jean\documents\github\dictionnaryproject\main.c
+1478873894 source:c:\users\jean\documents\github\dictionnaryproject\main.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 	"constantes.h"
 	"controller_main_menu.h"
 	"controller_active_dictionary.h"
@@ -53,7 +54,7 @@
 	<stdlib.h>
 	"../constantes.h"
 
-1478529520 source:c:\users\jean\documents\github\dictionnaryproject\views\view_main_menu.c
+1478875484 source:c:\users\jean\documents\github\dictionnaryproject\views\view_main_menu.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"

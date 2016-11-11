@@ -5,22 +5,23 @@
 
 
 void initMainMenu(int* isAFileSelected, char* path){
-    char userChoice;
+    int userChoice;
     while(*isAFileSelected != 1){
+        userChoice = 10;
         propositions(&userChoice);
         switch(userChoice){
-            case '1':
+            case 1:
                 printf("coucou");
                 break;
-            case '2':
+            case 2:
                 break;
-            case '3':
+            case 3:
                 break;
-            case '4':
+            case 4:
                 break;
-            case '5':
+            case 5:
                 break;
-            case '6':
+            case 6:
                 break;
             default:
                 printf("This is not a valid option\n");
@@ -28,16 +29,7 @@ void initMainMenu(int* isAFileSelected, char* path){
         }
     }
 
-/*void initMainMenu(int* isAFileSelected){
-   int userChoice = 0;
-     while(*isAFileSelected != 1){
-         propositions(&userChoice);
-         *isAFileSelected = 1;
-         clearConsole();
-
-         printf("%d", userChoice);
-     }
-
+/*
      int max = 10;
      char * question = "\n Find a name please \n";
      char * name = malloc(sizeof(char)*10);
