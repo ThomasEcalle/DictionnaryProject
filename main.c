@@ -7,14 +7,16 @@
 int main()
 {
     printf("WELCOME IN THE DICTIONARIES ADMINISTRATOR\n"
-           "-----------------------------------------\n\n");
+           "-----------------------------------------\n");
     int isAFileSelected = 0;
+    char* path = malloc(sizeof(char) * 255);
+    while(1 == 1){
+        if(isAFileSelected){
 
-    if(isAFileSelected){
-
-    }
-    else{
-
+        }
+        else{
+            initMainMenu(&isAFileSelected, path);
+        }
     }
     return 0;
 }
