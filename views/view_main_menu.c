@@ -5,15 +5,15 @@
 
 void propositions(int *userChoice)
 {
-    while (*userChoice < 1 || *userChoice > 4)
-    {
-        printf("\nWhat would you like to do ?\n"
-           "1- Create a dictionary\n"
-           "2- Use an existing dictionary\n"
-           "3- Make a dictionary from a text file\n"
-           "4- Destroy a dictionary\n");
-           scanf("%d", userChoice);
-           emptyBuffer();
+    printf("\nWhat would you like to do ?\n"
+       "1- Create a dictionary\n"
+       "2- Use an existing dictionary\n"
+       "3- Make a dictionary from a text file\n"
+       "4- Destroy a dictionary\n");
+       scanf("%d", userChoice);
+       emptyBuffer();
+    if(*userChoice < 1 || *userChoice > 4){
+        *userChoice = NULL;
     }
 }
 

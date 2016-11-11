@@ -7,7 +7,7 @@
 void initMainMenu(int* isAFileSelected, char* path){
     int userChoice;
     while(*isAFileSelected != 1){
-        userChoice = 10;
+        userChoice = NULL;
         propositions(&userChoice);
         switch(userChoice){
             case 1:
