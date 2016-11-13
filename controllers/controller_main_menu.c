@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "../constantes.h"
 #include "../view_main_menu.h"
+#include "../models/gestbib.c"
 
 
 void initMainMenu(int* isAFileSelected, char* path){

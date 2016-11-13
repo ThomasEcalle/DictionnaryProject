@@ -40,7 +40,23 @@
 		<Unit filename="controllers/controller_main_menu.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="gestbib.h" />
+		<Unit filename="gestexpr.h" />
+		<Unit filename="gestrech.h" />
+		<Unit filename="gesttorth.h" />
 		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="models/gestbib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="models/gestexpr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="models/gestrech.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="models/gesttorth.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="tests/main1.c">
