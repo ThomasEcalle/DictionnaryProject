@@ -1,13 +1,10 @@
-void createDictionary(){
-}
-
-void useDictionary(){
+void createDictionary(int* path){
 }
 
 void generateDictionary(){
 }
 
-void destroyDictionary(){
+void destroyDictionary(int* path){
 }
 
 void insertWord(){
