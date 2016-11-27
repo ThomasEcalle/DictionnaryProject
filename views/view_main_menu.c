@@ -3,26 +3,6 @@
 #include "../constantes.h"
 
 /*
- NE PLUS UTILISER JEAN ! UTILISER FONCTION POUR MENU OU POUR STRING
- JE LA LAISSE POUR POUVOIR COMPILER SANS CHANGER TON CODE MAIS IL FAUDRA L EFFACER
- ET APPELER LES AUTRES FONCTIONS A LA PLACE !
-*/
-void propositions(int *userChoice)
-{
-    printf("\nWhat would you like to do ?\n"
-       "1- Create a dictionary\n"
-       "2- Use an existing dictionary\n"
-       "3- Make a dictionary from a text file\n"
-       "4- Destroy a dictionary\n"
-       "5- Quit application now");
-       scanf("%d", userChoice);
-       emptyBuffer();
-    if(*userChoice < 1 || *userChoice > 5){
-        *userChoice = NULL;
-    }
-}
-
-/*
 *   Input : char * answer -> the String we want the user to fill
             char * question -> the question we want to ask him
             int min -> minimum size
@@ -86,7 +66,7 @@ void askForSring (char * answer, char * question, int minSize,int maxSize)
 void askForNumber (int * numberAsked, char * question, int min, int max)
 {
     char * errorMessage = malloc(sizeof(char)*50);
-    sprintf(errorMessage, "Please enter a number between %d and %d", minSize,maxSize);
+    sprintf(errorMessage, "Please enter a number between %d and %d", min,max);
     int error = 0;
     int check = 0;
     while (!check)
