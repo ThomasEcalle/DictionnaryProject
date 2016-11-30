@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "../constantes.h"
 #include "../view_main_menu.h"
-#include "../models/gestbib.c"
 
 
 
@@ -16,27 +15,28 @@
 */
 void initMainMenu(int* isAFileSelected, char* path){
     int userChoice;
-    while(*isAFileSelected != 1){
-        userChoice = NULL;
-        propositions(&userChoice);
-        switch(userChoice){
-            case 1:
-                createDictionaryChoice(isAFileSelected, path);
-                break;
-            case 2:
-                useExistantDictionaryChoice(isAFileSelected, path);
-                break;
-            case 3:
-                break;
-            case 4:
-                destroyDictionaryChoice(isAFileSelected, path);
-                break;
-            case 5:
-                break;
-            default:
-                printf("This is not a valid option\n");
-                break;
-        }
+    char *choicesArray[] = {"Create a dictionary",
+                            "Use an existing dictionary",
+                            "Make a dictionary from a text file",
+                            "Destroy a dictionary"};
+    printMenu (choicesArray, &userChoice);
+    switch(userChoice){
+        case 1:
+            createDictionaryChoice(isAFileSelected, path);
+            break;
+        case 2:
+            useExistantDictionaryChoice(isAFileSelected, path);
+            break;
+        case 3:
+            break;
+        case 4:
+            destroyDictionaryChoice(isAFileSelected, path);
+            break;
+        case 5:
+            break;
+        default:
+            printf("This is not a valid option\n");
+            break;
     }
 }
 
@@ -52,13 +52,13 @@ void initMainMenu(int* isAFileSelected, char* path){
 */
 void createDictionaryChoice(int* isAFileSelected, char* path){
     path = NULL;
-    getSelectedPath(path); /// !----- fonction de la vue a faire qui doit retourner un path
+    getSelectedPath(&path); /// !----- fonction de la vue a faire qui doit retourner un path
     while(fopen(*path, "r") != NULL){ // Verifie que le fichier n'existe pas
-        messageUser("There is already a file at this path."); /// !----- fonction a faire qui prend en param un message d'erreur
+        printErrorMessage ("This path already contain a file.")
         getSelectedPath(path);
     }
     *isAFileSelected = 1;
-    createDictionary(path); /// !----- fonction du model permettant la creation du dictionnaire
+    createDictionary(&path); /// !----- fonction du model permettant la creation du dictionnaire*/
 }
 
 /*
@@ -69,9 +69,9 @@ void createDictionaryChoice(int* isAFileSelected, char* path){
 *   formatte comme un dictionnaire, le considere comme un dictionnaire actif.
 */
 void useExistantDictionaryChoice(int* isAFileSelected, char* path){
-    path = NULL;
+    /*path = NULL;
     checkNotNullAndFormatted(path);
-    *isAFileSelected = 1;
+    *isAFileSelected = 1;*/
 }
 
 /*
@@ -82,10 +82,10 @@ void useExistantDictionaryChoice(int* isAFileSelected, char* path){
 *   formatte comme un dictionnaire, le supprime.
 */
 void destroyDictionaryChoice(int* isAFileSelected, char* path){
-    path = NULL;
+    /*path = NULL;
     checkNotNullAndFormatted(path);
     destroyDictionary(path);
-    *isAFileSelected = 0;
+    *isAFileSelected = 0;*/
 }
 
 /*
@@ -96,16 +96,16 @@ void destroyDictionaryChoice(int* isAFileSelected, char* path){
 *   a l'utilisateur un nouveau chemin jusqu'a ce que ce soit le cas.
 */
 void checkNotNullAndFormatted(char* path){
-    do{
+    /*do{
         getSelectedPath(path);
         while(fopen(*path, "r") == NULL){ // Verifie que le fichier existe bien
             messageUser("There is no file at this path.");
             getSelectedPath(path);
         }
         if(!dicoFormatted(path)){ /// !----- fonction du model ou controller vérifiant le bon formattage du fichier dictionnaire
-            messageUser("The dictionary is not formatted.")
+            messageUser("The dictionary is not formatted.");
         }
-    }while(!dicoFormatted(path));
+    }while(!dicoFormatted(path));*/
 }
 
 /*
