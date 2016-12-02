@@ -78,7 +78,7 @@ void getWordsFromFile(char * path, List * elementsList)
 
         char c = fgetc(file);
 
-        while (c != EOF)
+        while (1)
         {
 
             if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90)) // IF C IS A LETTER
@@ -115,6 +115,7 @@ void getWordsFromFile(char * path, List * elementsList)
 
                     count = 0;
                     lastWasALetter = 0;
+                    if (c == EOF) break;
                 }
             }
             c = fgetc(file);
