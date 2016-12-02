@@ -7,8 +7,12 @@
 
 
 
- void putInDictionnary(List * elements, char * path)
+ void putInDictionnary(char * src, char * destination)
  {
+     List * elements = NULL;
+     elements = initialisationList();
+     getWordsFromFile(src, elements);
+  
      FILE * file = NULL;
      file = fopen(path,"w");
 
