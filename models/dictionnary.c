@@ -34,7 +34,7 @@
 
             Element * actuel = elements->first;
 
-            while (actuel->next != NULL)
+            while (actuel != NULL)
             {
                 if (strcmp(min,actuel->chaine) > 0)
                 {
