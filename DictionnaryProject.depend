@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1478876069 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\main.c
+1480016698 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -60,18 +60,15 @@
 
 1478465631 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\controllers\controller_active_dictionary.c
 
-1478876666 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\controllers\controller_main_menu.c
+1480529741 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\controllers\controller_main_menu.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"
 	"../view_main_menu.h"
 
-1478877536 c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\view_main_menu.h
+1480024253 c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\view_main_menu.h
 
-1478465631 c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\controller_main_menu.h
-	<stdio.h>
-	<stdlib.h>
-	"constantes.h"
+1479057469 c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\controller_main_menu.h
 
 1478465631 c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\controller_active_dictionary.h
 
@@ -95,7 +92,7 @@
 	<stdlib.h>
 	"../constantes.h"
 
-1478877502 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\views\view_main_menu.c
+1480529741 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\views\view_main_menu.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"
@@ -109,4 +106,20 @@
 1478878213 source:c:\users\jean\documents\github\dictionnaryproject\models\gestrech.c
 
 1478878213 source:c:\users\jean\documents\github\dictionnaryproject\models\gesttorth.c
+
+1480529741 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\models\gestbib.c
+
+1479057469 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\models\gestexpr.c
+
+1479057469 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\models\gestrech.c
+
+1479057469 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\models\gesttorth.c
+
+1480648298 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\models\lib\dictionnary.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../lib/dictionnary.h"
+
+1480648410 c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\models\lib\dictionnary.h
 
