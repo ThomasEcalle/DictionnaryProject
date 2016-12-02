@@ -14,7 +14,7 @@ struct List
     int length;
     Element *first;
 };
-
+void putInDictionnary(char * src, char * destination);
 int removeElement(List * list, char * value);
 Element * recursiveSort (Element * a, Element * b);
 void afficherListe(List * list);
