@@ -14,7 +14,7 @@
      getWordsFromFile(src, elements);
   
      FILE * file = NULL;
-     file = fopen(path,"w");
+     file = fopen(destination,"w");
 
      List * newList = NULL;
      newList = initialisationList();
