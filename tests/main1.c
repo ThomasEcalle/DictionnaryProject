@@ -6,7 +6,7 @@
 
 int main()
 {
-   generateDictionary("thomas.txt","thomas.dico");
+   //generateDictionary("thomas.txt","thomas.dico");
 
 //   Element * word = malloc(sizeof(word));
 //   word->chaine = "pocebleu";
@@ -15,8 +15,10 @@ int main()
 //destroyDictionary("thomas.txt");
 //destroyDictionary("thomas.dico");
 //destroyDictionary("raph.dico");
+
     char * mot = malloc(sizeof(char)*20);
-    mot = researchWordInFIle("thomas.dico","socia",2);
+    mot = "voiturettte";
+    mot = researchWordInFIle("thomas.dico",mot,5);
     printf("%s",mot);
 }
 

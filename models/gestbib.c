@@ -35,7 +35,7 @@ void debugInt(char *msg, int var)
     printf("%d\n", var);
 }
 void createDictionary(char * path){
-    FILE file = NULL;
+    FILE * file = NULL;
     file = fopen(path,"w");
     if (file != NULL)
     {
