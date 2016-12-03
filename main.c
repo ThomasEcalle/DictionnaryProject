@@ -5,7 +5,7 @@
 //#include "controller_main_menu.h"
 //#include "controller_active_dictionary.h"
 #include "gestbib.h"
-#include "models/dictionnary.h"
+
 
 //Test de  recherche de mots
 /*int main(void)
@@ -34,7 +34,7 @@
     researchWord(dico, "dict", 10);
 
 
-}*/
+}
 int main()
 {
     printf("WELCOME IN THE DICTIONARIES ADMINISTRATOR\n"
@@ -51,4 +51,4 @@ int main()
         }
     }
     return 0;
-}
+}*/

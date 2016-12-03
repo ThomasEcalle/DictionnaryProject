@@ -24,5 +24,5 @@ void afficherListe(List * list);
 void getWordsFromFile(char * path, List * elementsList);
 List *initialisationList();
 void insertion(List *list, char * string);
-
-char *researchWord(List *List, char *word, int filter);
+void fromListToDico (List * elements, char * destination);
+//char *researchWord(List *List, char *word, int filter);

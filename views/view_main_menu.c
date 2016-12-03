@@ -37,7 +37,8 @@ void askForSring (char * answer, char * question, int minSize,int maxSize)
         }else{
             error++;
         }
-        for (int i = 0; i < size; i++)
+        int i;
+        for (i = 0; i < size; i++)
         {
             if ((answer[i] < 65 || answer[i] > 90) && (answer[i] <97 || answer[i] > 122))
             {

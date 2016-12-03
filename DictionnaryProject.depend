@@ -127,10 +127,11 @@
 
 1480648410 c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\models\lib\dictionnary.h
 
-<<<<<<< HEAD
+1480648410 D
+
 1480663831 source:c:\users\my-pc\documents\github\dictionnaryproject\controllers\controller_active_dictionary.c
 
-1480663831 source:c:\users\my-pc\documents\github\dictionnaryproject\controllers\controller_main_menu.c
+1480795198 source:c:\users\my-pc\documents\github\dictionnaryproject\controllers\controller_main_menu.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"
@@ -161,14 +162,40 @@
 	<stdlib.h>
 	"../constantes.h"
 
-1480663831 source:c:\users\my-pc\documents\github\dictionnaryproject\views\view_main_menu.c
+1480795720 source:c:\users\my-pc\documents\github\dictionnaryproject\views\view_main_menu.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"
-=======
+
+1480663831 ntes.h"
+
 1480780690 c:\users\jean\documents\github\dictionnaryproject\gestbib.h
 	"models/dictionnary.h"
 
 1480780690 c:\users\jean\documents\github\dictionnaryproject\models\dictionnary.h
->>>>>>> origin/master
+
+1480780690 gin/master
+
+1480797903 source:c:\users\my-pc\documents\github\dictionnaryproject\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"gestbib.h"
+
+1480797877 c:\users\my-pc\documents\github\dictionnaryproject\gestbib.h
+
+1480795624 c:\users\my-pc\documents\github\dictionnaryproject\models\dictionnary.h
+
+1480797645 source:c:\users\my-pc\documents\github\dictionnaryproject\models\gestbib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"../gestbib.h"
+
+1480798516 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main1.c
+	<stdio.h>
+	<stdlib.h>
+	"../constantes.h"
+	"../gestbib.h"
 

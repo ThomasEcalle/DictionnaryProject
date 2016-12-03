@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-#include "dictionnary.h"
+#include "../gestbib.h"
 int compare(char *a, char *b)
 {
     int len1 = strlen(a);
@@ -45,72 +45,93 @@ void destroyDictionary(char * path){
     remove(path);
 }
 
-void insertWord(){
+void insertWord(char * path, Word * word){
+    List * list = NULL;
+    list = initialisationList();
+
+    getWordsFromFile(path,list);
+
+    insertion(list,word->chaine);
+
+    fromListToDico(list,path);
 }
-
-char *researchWord(List *List, char *word, int filter)
-{
-    char *closest = "";
-    int len = strlen(word);
-    int i;
-    Element *Element = malloc(sizeof (Element));
-    Element = List->first;
-    for (i = 0; i < List->length; Element = Element->next)
-    {
-//        debugChar("Element", Element->chaine);
-        if (len > Element->length)
-        {
-            ++i;
-            continue;
-        }
-
-        char *tmp = substr(Element->chaine, len);
-
-//        debugChar("word", word);
-//        debugChar("TMP", tmp);
-        if (strcmp(tmp, word) == 0)
-        {
-//            debugChar("Research word : on entre dans debut commun", Element->chaine);
-            int diff = compare(Element->chaine,word);
-//            debugChar(word, Element->chaine);
-//            debugInt("DIFF : ", diff);
-            if (diff == 0)
-            {
-                debugChar("RESULT :", Element->chaine);
-                return Element->chaine;
-            }
-            else if (diff <= filter)
-            {
-                if ((strlen(closest) == 0 && diff <= filter) || diff < filter)
-                {
-                    filter = diff;
-                    closest = Element->chaine;
-                }
-
-            }
-        }
-//        debugChar("CLOSEST :", closest);
-        ++i;
-    }
-    debugChar("RESULT :", closest);
-    return closest;
-
-}
+//
+//char *researchWord(List *List, char *word, int filter)
+//{
+//    char *closest = "";
+//    int len = strlen(word);
+//    int i;
+//    Element *Element = malloc(sizeof (Element));
+//    Element = List->first;
+//    for (i = 0; i < List->length; Element = Element->next)
+//    {
+////        debugChar("Element", Element->chaine);
+//        if (len > Element->length)
+//        {
+//            ++i;
+//            continue;
+//        }
+//
+//        char *tmp = substr(Element->chaine, len);
+//
+////        debugChar("word", word);
+////        debugChar("TMP", tmp);
+//        if (strcmp(tmp, word) == 0)
+//        {
+////            debugChar("Research word : on entre dans debut commun", Element->chaine);
+//            int diff = compare(Element->chaine,word);
+////            debugChar(word, Element->chaine);
+////            debugInt("DIFF : ", diff);
+//            if (diff == 0)
+//            {
+//                debugChar("RESULT :", Element->chaine);
+//                return Element->chaine;
+//            }
+//            else if (diff <= filter)
+//            {
+//                if ((strlen(closest) == 0 && diff <= filter) || diff < filter)
+//                {
+//                    filter = diff;
+//                    closest = Element->chaine;
+//                }
+//
+//            }
+//        }
+////        debugChar("CLOSEST :", closest);
+//        ++i;
+//    }
+//    debugChar("RESULT :", closest);
+//    return closest;
+//
+//}
 
 /*
 *   Input : char * source - Path of the .txt file
 *           char * destination - Path of the future dictionary
 *   Return : -
-*   Purpose : This function will read the source file, take all the words and
-              finally put them in order (deleting the doubles one) in the destination file
+*   Purpose : This function will read the source file and then call the function needed to
+              put a linked list into a dictionary
 */
  void putInDictionnary(char * source, char * destination)
  {
-     List * elements = NULL;
+      List * elements = NULL;
      elements = initialisationList();
 
      getWordsFromFile(source,elements);
 
+     fromListToDico(elements,destination);
+ }
+
+
+
+ /*
+*   Input : List * elements - Linked list
+*           char * destination - Path of the future dictionary
+*   Return : -
+*   Purpose : This function put all the words of a linked list into a dictionary in order
+*/
+void fromListToDico (List * elements, char * destination)
+ {
      FILE * file = NULL;
      file = fopen(destination,"w");
 
@@ -156,6 +177,8 @@ char *researchWord(List *List, char *word, int filter)
      fclose(file);
 
  }
+
+
 
 /*
 *   Input : char * path - Path of the .txt file
