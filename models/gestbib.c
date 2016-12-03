@@ -34,7 +34,13 @@ void debugInt(char *msg, int var)
     printf("%s    ", msg);
     printf("%d\n", var);
 }
-void createDictionary(){
+void createDictionary(char * path){
+    FILE file = NULL;
+    file = fopen(path,"w");
+    if (file != NULL)
+    {
+        fclose(file);
+    }
 }
 
 void generateDictionary(char * formatText, char * dictionaryName){
@@ -45,7 +51,7 @@ void destroyDictionary(char * path){
     remove(path);
 }
 
-void insertWord(char * path, Word * word){
+void insertWord(char * path, Element * word){
     List * list = NULL;
     list = initialisationList();
 
@@ -55,55 +61,64 @@ void insertWord(char * path, Word * word){
 
     fromListToDico(list,path);
 }
-//
-//char *researchWord(List *List, char *word, int filter)
-//{
-//    char *closest = "";
-//    int len = strlen(word);
-//    int i;
-//    Element *Element = malloc(sizeof (Element));
-//    Element = List->first;
-//    for (i = 0; i < List->length; Element = Element->next)
-//    {
-////        debugChar("Element", Element->chaine);
-//        if (len > Element->length)
-//        {
-//            ++i;
-//            continue;
-//        }
-//
-//        char *tmp = substr(Element->chaine, len);
-//
-////        debugChar("word", word);
-////        debugChar("TMP", tmp);
-//        if (strcmp(tmp, word) == 0)
-//        {
-////            debugChar("Research word : on entre dans debut commun", Element->chaine);
-//            int diff = compare(Element->chaine,word);
-////            debugChar(word, Element->chaine);
-////            debugInt("DIFF : ", diff);
-//            if (diff == 0)
-//            {
-//                debugChar("RESULT :", Element->chaine);
-//                return Element->chaine;
-//            }
-//            else if (diff <= filter)
-//            {
-//                if ((strlen(closest) == 0 && diff <= filter) || diff < filter)
-//                {
-//                    filter = diff;
-//                    closest = Element->chaine;
-//                }
-//
-//            }
-//        }
-////        debugChar("CLOSEST :", closest);
-//        ++i;
-//    }
-//    debugChar("RESULT :", closest);
-//    return closest;
-//
-//}
+
+void researchWordInFIle(char * path, char * word, int filter)
+{
+    List * list = NULL;
+    list = initialisationList();
+
+    getWordsFromFile(path,list);
+    researchWord(list,word,filter);
+}
+
+char *researchWord(List *List, char *word, int filter)
+{
+    char *closest = "";
+    int len = strlen(word);
+    int i;
+    Element *Element = malloc(sizeof (Element));
+    Element = List->first;
+    for (i = 0; i < List->length; Element = Element->next)
+    {
+//        debugChar("Element", Element->chaine);
+        if (len > Element->length)
+        {
+            ++i;
+            continue;
+        }
+
+        char *tmp = substr(Element->chaine, len);
+
+//        debugChar("word", word);
+//        debugChar("TMP", tmp);
+        if (strcmp(tmp, word) == 0)
+        {
+//            debugChar("Research word : on entre dans debut commun", Element->chaine);
+            int diff = compare(Element->chaine,word);
+//            debugChar(word, Element->chaine);
+//            debugInt("DIFF : ", diff);
+            if (diff == 0)
+            {
+                debugChar("RESULT :", Element->chaine);
+                return Element->chaine;
+            }
+            else if (diff <= filter)
+            {
+                if ((strlen(closest) == 0 && diff <= filter) || diff < filter)
+                {
+                    filter = diff;
+                    closest = Element->chaine;
+                }
+
+            }
+        }
+//        debugChar("CLOSEST :", closest);
+        ++i;
+    }
+    debugChar("RESULT :", closest);
+    return closest;
+
+}
 
 /*
 *   Input : char * source - Path of the .txt file
@@ -157,6 +172,7 @@ void fromListToDico (List * elements, char * destination)
                 }
                 actuel = actuel->next;
             }
+
             if (strcmp(min,"zz") != 0)
             {
                 fprintf(file, "%s\n", min);
@@ -252,7 +268,7 @@ List * initialisationList()
     Element *element = malloc(sizeof(*element));
 
 
-    element = NULL;
+    element->next = NULL;
 
     list->first = element;
     list->length = 0;

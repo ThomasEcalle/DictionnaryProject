@@ -6,16 +6,17 @@
 
 int main()
 {
-//    List * list = NULL;
-//    list = initialisationList();
-//
-//    getWordsFromFile("thomas.txt",list);
-//    afficherListe(list);
-//    insertion(list,"cerf");
-//    printf("\n*");
-//    afficherListe(list);
-//    fromListToDico(list,"raph.dico");
-//    printf("okok");
+   generateDictionary("thomas.txt","thomas.dico");
 
+//   Element * word = malloc(sizeof(word));
+//   word->chaine = "pocebleu";
+//   insertWord("thomas.dico", word);
+
+//destroyDictionary("thomas.txt");
+//destroyDictionary("thomas.dico");
+//destroyDictionary("raph.dico");
+    char * mot = malloc(sizeof(char)*20);
+    mot = researchWordInFIle("thomas.dico","socia",2);
+    printf("%s",mot);
 }
 

@@ -18,11 +18,11 @@ void generateDictionary();
 void destroyDictionary();
 void insertWord();
 
-void researchWord();
+
 int removeElement(List * list, char * value);
 void afficherListe(List * list);
 void getWordsFromFile(char * path, List * elementsList);
 List *initialisationList();
 void insertion(List *list, char * string);
 void fromListToDico (List * elements, char * destination);
-//char *researchWord(List *List, char *word, int filter);
+char *researchWord(List *List, char *word, int filter);
