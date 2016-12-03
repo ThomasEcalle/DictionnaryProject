@@ -52,9 +52,10 @@ char *researchWord(List *List, char *word, int filter)
 {
     char *closest = "";
     int len = strlen(word);
+    int i;
     Element *Element = malloc(sizeof (Element));
     Element = List->first;
-    for (int i = 0; i < List->length; Element = Element->next)
+    for (i = 0; i < List->length; Element = Element->next)
     {
 //        debugChar("Element", Element->chaine);
         if (len > Element->length)

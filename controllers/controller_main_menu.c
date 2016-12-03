@@ -51,14 +51,19 @@ void initMainMenu(int* isAFileSelected, char* path){
 *   chemin valide.
 */
 void createDictionaryChoice(int* isAFileSelected, char* path){
-    path = NULL;
-    getSelectedPath(&path); /// !----- fonction de la vue a faire qui doit retourner un path
-    while(fopen(*path, "r") != NULL){ // Verifie que le fichier n'existe pas
-        printErrorMessage ("This path already contain a file.")
-        getSelectedPath(path);
+    printf("Please select a path for the dictionary.\nYour path : ");
+    scanf("%s", path);
+
+    //getSelectedPath(&path); /// !----- fonction de la vue a faire qui doit retourner un path
+    if(fopen(path, "r") != NULL){ // Verifie que le fichier n'existe pas
+        free(path);
+        path = malloc(sizeof(char) * 255);
+        printErrorMessage ("This path already contain a file.\nPlease select another path.");
+        printf("\nYour new path : ");
+        scanf("%s", path);
     }
     *isAFileSelected = 1;
-    createDictionary(&path); /// !----- fonction du model permettant la creation du dictionnaire*/
+    //createDictionary(&path); /// !----- fonction du model permettant la creation du dictionnaire*/
 }
 
 /*
@@ -107,11 +112,3 @@ void checkNotNullAndFormatted(char* path){
         }
     }while(!dicoFormatted(path));*/
 }
-
-/*
-     int max = 10;
-     char * question = "\n Find a name please \n";
-     char * name = malloc(sizeof(char)*10);
-
-     askForSring(name,max,question);
-*/
