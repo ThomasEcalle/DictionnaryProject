@@ -1,16 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../lib/dictionnary.h"
+#include "dictionnary.h"
 
 
 
 
 
- void putInDictionnary(List * elements, char * path)
+ void putInDictionnary(char * src, char * destination)
  {
+     List * elements = NULL;
+     elements = initialisationList();
+     getWordsFromFile(src, elements);
+  
      FILE * file = NULL;
-     file = fopen(path,"w");
+     file = fopen(destination,"w");
 
      List * newList = NULL;
      newList = initialisationList();
@@ -30,7 +34,7 @@
 
             Element * actuel = elements->first;
 
-            while (actuel->next != NULL)
+            while (actuel != NULL)
             {
                 if (strcmp(min,actuel->chaine) > 0)
                 {
@@ -74,7 +78,7 @@ void getWordsFromFile(char * path, List * elementsList)
 
         char c = fgetc(file);
 
-        while (c != EOF)
+        while (1)
         {
 
             if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90)) // IF C IS A LETTER
@@ -111,6 +115,7 @@ void getWordsFromFile(char * path, List * elementsList)
 
                     count = 0;
                     lastWasALetter = 0;
+                    if (c == EOF) break;
                 }
             }
             c = fgetc(file);
