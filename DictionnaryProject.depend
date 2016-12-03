@@ -11,7 +11,7 @@
 
 1477901340 source:c:\users\jean\documents\github\dictionnaryproject\controllers\controller_active_dictionary.c
 
-1480280110 source:c:\users\jean\documents\github\dictionnaryproject\controllers\controller_main_menu.c
+1480783031 source:c:\users\jean\documents\github\dictionnaryproject\controllers\controller_main_menu.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"
@@ -19,13 +19,12 @@
 
 1478873611 c:\users\jean\documents\github\dictionnaryproject\constantes.h
 
-1480280025 source:c:\users\jean\documents\github\dictionnaryproject\main.c
+1480783118 source:c:\users\jean\documents\github\dictionnaryproject\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
-	"constantes.h"
-	"controller_main_menu.h"
-	"controller_active_dictionary.h"
+	"gestbib.h"
+	"models/dictionnary.h"
 
 1478878213 c:\users\jean\documents\github\dictionnaryproject\controller_main_menu.h
 
@@ -99,7 +98,12 @@
 
 1480279247 c:\users\jean\documents\github\dictionnaryproject\models\gestbib.c
 
-1480279247 source:c:\users\jean\documents\github\dictionnaryproject\models\gestbib.c
+1480781423 source:c:\users\jean\documents\github\dictionnaryproject\models\gestbib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"dictionnary.h"
 
 1478878213 source:c:\users\jean\documents\github\dictionnaryproject\models\gestexpr.c
 
@@ -122,4 +126,9 @@
 	"../lib/dictionnary.h"
 
 1480648410 c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\models\lib\dictionnary.h
+
+1480780690 c:\users\jean\documents\github\dictionnaryproject\gestbib.h
+	"models/dictionnary.h"
+
+1480780690 c:\users\jean\documents\github\dictionnaryproject\models\dictionnary.h
 
