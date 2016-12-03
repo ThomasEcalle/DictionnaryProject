@@ -9,7 +9,7 @@ int compare(char *a, char *b)
     int len2 = strlen(b);
     if (len1 > len2)
         return compare(b, a);
-    return len2 - len1;
+    return len2 - len1 ;
 }
 char *substr(char *src, int len)
 {
