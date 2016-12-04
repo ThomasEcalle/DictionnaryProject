@@ -3,7 +3,7 @@
 #include <string.h>
 #include "../gestbib.h"
 #include "../gesttorth.h"
-void getDifferentWords(char * file, char * dico)
+List * getDifferentWords(char * file, char * dico)
 {
     List * fileWords = NULL;
     fileWords = initialisationList();
@@ -16,13 +16,12 @@ void getDifferentWords(char * file, char * dico)
 
     List * newList = compareList(fileWords,dicoWords);
 
-    afficherListe(newList);
+    return newList;
 
 }
 
 List * compareList(List * first, List * second)
 {
-    int i, j;
     List * newList = NULL;
     newList = initialisationList();
 
@@ -44,6 +43,7 @@ List * compareList(List * first, List * second)
         if (found >= second->length)
         {
             insertion(newList,word1->chaine,word1->lineNumber);
+
         }
         found = 0;
 
