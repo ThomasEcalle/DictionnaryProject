@@ -145,7 +145,12 @@
 
 1480663831 source:c:\users\my-pc\documents\github\dictionnaryproject\models\gestrech.c
 
-1480663831 source:c:\users\my-pc\documents\github\dictionnaryproject\models\gesttorth.c
+1480845636 source:c:\users\my-pc\documents\github\dictionnaryproject\models\gesttorth.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../gestbib.h"
+	"../gesttorth.h"
 
 1480807948 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main2.c
 	<stdio.h>
@@ -182,11 +187,11 @@
 	<string.h>
 	"gestbib.h"
 
-1480804726 c:\users\my-pc\documents\github\dictionnaryproject\gestbib.h
+1480845429 c:\users\my-pc\documents\github\dictionnaryproject\gestbib.h
 
 1480795624 c:\users\my-pc\documents\github\dictionnaryproject\models\dictionnary.h
 
-1480805960 source:c:\users\my-pc\documents\github\dictionnaryproject\models\gestbib.c
+1480845509 source:c:\users\my-pc\documents\github\dictionnaryproject\models\gestbib.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -198,4 +203,6 @@
 	<stdlib.h>
 	"../constantes.h"
 	"../gestbib.h"
+
+1480844915 c:\users\my-pc\documents\github\dictionnaryproject\gesttorth.h
 

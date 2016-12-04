@@ -57,7 +57,7 @@ void insertWord(char * path, Element * word){
 
     getWordsFromFile(path,list);
 
-    insertion(list,word->chaine);
+    insertion(list,word->chaine,0);
 
     fromListToDico(list,path);
 }
@@ -207,6 +207,7 @@ void getWordsFromFile(char * path, List * elementsList)
     FILE * file = NULL;
     int count = 0;
     int lastWasALetter = 0;
+    int line = 1;
 
     file = fopen(path,"r");
     if(file != NULL)
@@ -246,7 +247,7 @@ void getWordsFromFile(char * path, List * elementsList)
                     }
                     if (strlen(string) >= 2 || string[0] == 'a')
                     {
-                        insertion(elementsList,string);
+                        insertion(elementsList,string,line);
                     }
 
                     count = 0;
@@ -254,6 +255,7 @@ void getWordsFromFile(char * path, List * elementsList)
 
                 }
             }
+            if (c == '\n') line++;
             if (c == EOF) break;
             c = fgetc(file);
         }
@@ -276,13 +278,14 @@ List * initialisationList()
     return list;
 }
 
-void insertion(List * list, char * stringToAdd)
+void insertion(List * list, char * stringToAdd, int line)
 {
     // NEW Element CREATION
     Element *ElementToAdd = malloc(sizeof(*ElementToAdd));
 
     ElementToAdd->chaine = stringToAdd;
     ElementToAdd->length = strlen(stringToAdd);
+    ElementToAdd->lineNumber = line;
 
 
     // INSERTION OF THE NEW Element AT FIRST POSITION
@@ -298,9 +301,9 @@ void afficherListe(List * list)
 
     Element * actuel = list->first;
 
-    while (actuel != NULL)
+    while (actuel->next != NULL)
     {
-        printf("%s -> ", actuel->chaine);
+        printf("%s (%d)\n", actuel->chaine, actuel->lineNumber);
         actuel = actuel->next;
     }
 }
