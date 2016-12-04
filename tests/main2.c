@@ -1,11 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../constantes.h"
+#include "../gestbib.h"
+#include "../gesttorth.h"
 
-/*
+
 int main()
 {
-    printf("Hello world!\n");
-    return 0;
+    List * list = getDifferentWords("thomas.txt", "thomas.dico");
+    afficherListe(list);
+
 }
-*/
+

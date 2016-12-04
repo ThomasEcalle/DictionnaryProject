@@ -2,14 +2,14 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-#include "dictionnary.h"
+#include "../gestbib.h"
 int compare(char *a, char *b)
 {
     int len1 = strlen(a);
     int len2 = strlen(b);
     if (len1 > len2)
         return compare(b, a);
-    return len2 - len1;
+    return len2 - len1 ;
 }
 char *substr(char *src, int len)
 {
@@ -34,7 +34,13 @@ void debugInt(char *msg, int var)
     printf("%s    ", msg);
     printf("%d\n", var);
 }
-void createDictionary(){
+void createDictionary(char * path){
+    FILE * file = NULL;
+    file = fopen(path,"w");
+    if (file != NULL)
+    {
+        fclose(file);
+    }
 }
 
 void generateDictionary(char * formatText, char * dictionaryName){
@@ -45,7 +51,34 @@ void destroyDictionary(char * path){
     remove(path);
 }
 
-void insertWord(){
+void insertWord(char * path, Element * word){
+    List * list = getWordsFromFile(path);
+
+    insertion(list,word->chaine,0);
+
+    fromListToDico(list,path);
+}
+
+void researchWordInFIle(char * path, char * word, int filter)
+{
+    List * list = getWordsFromFile(path);
+    researchWord(list,word,filter);
+}
+
+int propostitionResercheMot (char * wordToFind, char * dicoPath)
+{
+    int result = 0;
+    List * wordsFromDico = getWordsFromFile(dicoPath);
+    Element * word = wordsFromDico->first;
+    while (word->next != NULL)
+    {
+        if (strcmp(word->chaine,wordToFind) == 0)
+        {
+            result = 1;
+        }
+        word = word->next;
+    }
+    return result;
 }
 
 char *researchWord(List *List, char *word, int filter)
@@ -101,16 +134,26 @@ char *researchWord(List *List, char *word, int filter)
 *   Input : char * source - Path of the .txt file
 *           char * destination - Path of the future dictionary
 *   Return : -
-*   Purpose : This function will read the source file, take all the words and
-              finally put them in order (deleting the doubles one) in the destination file
+*   Purpose : This function will read the source file and then call the function needed to
+              put a linked list into a dictionary
 */
  void putInDictionnary(char * source, char * destination)
  {
-     List * elements = NULL;
-     elements = initialisationList();
+    List * elements = getWordsFromFile(source);
 
-     getWordsFromFile(source,elements);
+     fromListToDico(elements,destination);
+ }
 
+
+
+ /*
+*   Input : List * elements - Linked list
+*           char * destination - Path of the future dictionary
+*   Return : -
+*   Purpose : This function put all the words of a linked list into a dictionary in order
+*/
+void fromListToDico (List * elements, char * destination)
+ {
      FILE * file = NULL;
      file = fopen(destination,"w");
 
@@ -136,6 +179,7 @@ char *researchWord(List *List, char *word, int filter)
                 }
                 actuel = actuel->next;
             }
+
             if (strcmp(min,"zz") != 0)
             {
                 fprintf(file, "%s\n", min);
@@ -157,17 +201,22 @@ char *researchWord(List *List, char *word, int filter)
 
  }
 
+
+
 /*
 *   Input : char * path - Path of the .txt file
 *           List * elementsList - Linked list that will get all the words
 *   Return : -
 *   Purpose : This function will read a file and get all the words
 */
-void getWordsFromFile(char * path, List * elementsList)
+List * getWordsFromFile(char * path)
 {
+    List * elementsList = NULL;
+    elementsList = initialisationList();
     FILE * file = NULL;
     int count = 0;
     int lastWasALetter = 0;
+    int line = 1;
 
     file = fopen(path,"r");
     if(file != NULL)
@@ -207,7 +256,7 @@ void getWordsFromFile(char * path, List * elementsList)
                     }
                     if (strlen(string) >= 2 || string[0] == 'a')
                     {
-                        insertion(elementsList,string);
+                        insertion(elementsList,string,line);
                     }
 
                     count = 0;
@@ -215,10 +264,12 @@ void getWordsFromFile(char * path, List * elementsList)
 
                 }
             }
+            if (c == '\n') line++;
             if (c == EOF) break;
             c = fgetc(file);
         }
         fclose(file);
+        return elementsList;
 
     }
 }
@@ -229,7 +280,7 @@ List * initialisationList()
     Element *element = malloc(sizeof(*element));
 
 
-    element = NULL;
+    element->next = NULL;
 
     list->first = element;
     list->length = 0;
@@ -237,13 +288,14 @@ List * initialisationList()
     return list;
 }
 
-void insertion(List * list, char * stringToAdd)
+void insertion(List * list, char * stringToAdd, int line)
 {
     // NEW Element CREATION
     Element *ElementToAdd = malloc(sizeof(*ElementToAdd));
 
     ElementToAdd->chaine = stringToAdd;
     ElementToAdd->length = strlen(stringToAdd);
+    ElementToAdd->lineNumber = line;
 
 
     // INSERTION OF THE NEW Element AT FIRST POSITION
@@ -259,9 +311,9 @@ void afficherListe(List * list)
 
     Element * actuel = list->first;
 
-    while (actuel != NULL)
+    while (actuel->next != NULL)
     {
-        printf("%s -> ", actuel->chaine);
+        printf("%s (%d)\n", actuel->chaine, actuel->lineNumber);
         actuel = actuel->next;
     }
 }

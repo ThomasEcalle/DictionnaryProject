@@ -4,6 +4,7 @@ struct Element
     char * chaine;
     Element *next;
     int length;
+    int lineNumber;
 };
 typedef struct List List;
 struct List
@@ -18,11 +19,11 @@ void generateDictionary();
 void destroyDictionary();
 void insertWord();
 
-void researchWord();
+
 int removeElement(List * list, char * value);
 void afficherListe(List * list);
-void getWordsFromFile(char * path, List * elementsList);
+List * getWordsFromFile(char * path);
 List *initialisationList();
-void insertion(List *list, char * string);
-
+void insertion(List * list, char * stringToAdd, int line);
+void fromListToDico (List * elements, char * destination);
 char *researchWord(List *List, char *word, int filter);

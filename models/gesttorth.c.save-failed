@@ -5,9 +5,14 @@
 #include "../gesttorth.h"
 List * getDifferentWords(char * file, char * dico)
 {
-    List * fileWords = getWordsFromFile(file);
+    List * fileWords = NULL;
+    fileWords = initialisationList();
+    getWordsFromFile(file,fileWords);
 
-    List * dicoWords = getWordsFromFile(dico);
+    List * dicoWords = NULL;
+    dicoWords = initialisationList();
+    getWordsFromFile(dico,dicoWords);
+
 
     List * newList = compareList(fileWords,dicoWords);
 
