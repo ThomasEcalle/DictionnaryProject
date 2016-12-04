@@ -51,10 +51,10 @@ void destroyDictionary(char * path){
     remove(path);
 }
 
-void insertWord(char * path, Element * word){
+void insertWord(char * path, char * word){
     List * list = getWordsFromFile(path);
 
-    insertion(list,word->chaine,0);
+    insertion(list,word,0);
 
     fromListToDico(list,path);
 }
