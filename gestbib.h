@@ -22,7 +22,7 @@ void insertWord();
 
 int removeElement(List * list, char * value);
 void afficherListe(List * list);
-void getWordsFromFile(char * path, List * elementsList);
+List * getWordsFromFile(char * path);
 List *initialisationList();
 void insertion(List * list, char * stringToAdd, int line);
 void fromListToDico (List * elements, char * destination);

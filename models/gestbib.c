@@ -52,10 +52,7 @@ void destroyDictionary(char * path){
 }
 
 void insertWord(char * path, Element * word){
-    List * list = NULL;
-    list = initialisationList();
-
-    getWordsFromFile(path,list);
+    List * list = getWordsFromFile(path);
 
     insertion(list,word->chaine,0);
 
@@ -64,11 +61,24 @@ void insertWord(char * path, Element * word){
 
 void researchWordInFIle(char * path, char * word, int filter)
 {
-    List * list = NULL;
-    list = initialisationList();
-
-    getWordsFromFile(path,list);
+    List * list = getWordsFromFile(path);
     researchWord(list,word,filter);
+}
+
+int propostitionResercheMot (char * wordToFind, char * dicoPath)
+{
+    int result = 0;
+    List * wordsFromDico = getWordsFromFile(dicoPath);
+    Element * word = wordsFromDico->first;
+    while (word->next != NULL)
+    {
+        if (strcmp(word->chaine,wordToFind) == 0)
+        {
+            result = 1;
+        }
+        word = word->next;
+    }
+    return result;
 }
 
 char *researchWord(List *List, char *word, int filter)
@@ -129,10 +139,7 @@ char *researchWord(List *List, char *word, int filter)
 */
  void putInDictionnary(char * source, char * destination)
  {
-      List * elements = NULL;
-     elements = initialisationList();
-
-     getWordsFromFile(source,elements);
+    List * elements = getWordsFromFile(source);
 
      fromListToDico(elements,destination);
  }
@@ -202,8 +209,10 @@ void fromListToDico (List * elements, char * destination)
 *   Return : -
 *   Purpose : This function will read a file and get all the words
 */
-void getWordsFromFile(char * path, List * elementsList)
+List * getWordsFromFile(char * path)
 {
+    List * elementsList = NULL;
+    elementsList = initialisationList();
     FILE * file = NULL;
     int count = 0;
     int lastWasALetter = 0;
@@ -260,6 +269,7 @@ void getWordsFromFile(char * path, List * elementsList)
             c = fgetc(file);
         }
         fclose(file);
+        return elementsList;
 
     }
 }

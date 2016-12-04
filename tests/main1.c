@@ -20,5 +20,14 @@
 //    mot = "gui";
 //    mot = researchWordInFIle("thomas.dico",mot,5);
 //    printf("%s",mot);
+//
+//    if (propostitionResercheMot("pocebleu","thomas.dico")== 1)
+//    {
+//        printf("mot trouve");
+//    }
+//    else
+//    {
+//        printf("introuvable");
+//    }
 //}
 
