@@ -152,7 +152,7 @@
 	"../gestbib.h"
 	"../gesttorth.h"
 
-1480847355 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main2.c
+1480847408 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main2.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"
@@ -200,7 +200,7 @@
 	<math.h>
 	"../gestbib.h"
 
-1480847022 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main1.c
+1480847404 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main1.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"
