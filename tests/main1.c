@@ -4,8 +4,8 @@
 #include "../gestbib.h"
 
 
-//int main()
-//{
+int main()
+{
 //   generateDictionary("thomas.txt","thomas.dico");
 //
 //   Element * word = malloc(sizeof(word));
@@ -19,15 +19,9 @@
 //    char * mot = malloc(sizeof(char)*20);
 //    mot = "gui";
 //    mot = researchWordInFIle("thomas.dico",mot,5);
-//    printf("%s",mot);
-//
-//    if (propostitionResercheMot("pocebleu","thomas.dico")== 1)
-//    {
-//        printf("mot trouve");
-//    }
-//    else
-//    {
-//        printf("introuvable");
-//    }
-//}
+//      printf("%s",mot);
+
+    char * mot = researchWordInFIle("thomas.dico","voiles",14);
+    printf("%s",mot);
+}
 

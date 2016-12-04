@@ -13,11 +13,11 @@ struct List
     Element *first;
 };
 
-void createDictionary();
+void createDictionary(char * path);
 void useDictionary();
-void generateDictionary();
-void destroyDictionary();
-void insertWord();
+void generateDictionary(char * formatText, char * dictionaryName);
+void destroyDictionary(char * path);
+void insertWord(char * path, char * word);
 
 
 int removeElement(List * list, char * value);

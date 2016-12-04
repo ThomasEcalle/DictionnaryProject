@@ -5,10 +5,10 @@
 #include "../gesttorth.h"
 
 
-int main()
-{
-    List * list = getDifferentWords("thomas.txt", "thomas.dico");
-    afficherListe(list);
-
-}
+//int main()
+//{
+//    List * list = getDifferentWords("thomas.txt", "thomas.dico");
+//    afficherListe(list);
+//
+//}
 
