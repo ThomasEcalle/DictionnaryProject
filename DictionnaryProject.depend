@@ -19,7 +19,7 @@
 
 1478873611 c:\users\jean\documents\github\dictionnaryproject\constantes.h
 
-1480783118 source:c:\users\jean\documents\github\dictionnaryproject\main.c
+1480783410 source:c:\users\jean\documents\github\dictionnaryproject\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -98,7 +98,7 @@
 
 1480279247 c:\users\jean\documents\github\dictionnaryproject\models\gestbib.c
 
-1480781423 source:c:\users\jean\documents\github\dictionnaryproject\models\gestbib.c
+1480783410 source:c:\users\jean\documents\github\dictionnaryproject\models\gestbib.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -127,8 +127,7 @@
 
 1480648410 c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\models\lib\dictionnary.h
 
-1480780690 c:\users\jean\documents\github\dictionnaryproject\gestbib.h
-	"models/dictionnary.h"
+1480783409 c:\users\jean\documents\github\dictionnaryproject\gestbib.h
 
 1480780690 c:\users\jean\documents\github\dictionnaryproject\models\dictionnary.h
 

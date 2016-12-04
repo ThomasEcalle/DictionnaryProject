@@ -54,7 +54,6 @@ void createDictionaryChoice(int* isAFileSelected, char* path){
     printf("Please select a path for the dictionary.\nYour path : ");
     scanf("%s", path);
 
-    //getSelectedPath(&path); /// !----- fonction de la vue a faire qui doit retourner un path
     if(fopen(path, "r") != NULL){ // Verifie que le fichier n'existe pas
         free(path);
         path = malloc(sizeof(char) * 255);
