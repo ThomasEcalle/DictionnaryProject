@@ -5,6 +5,7 @@ struct Element
     Element *next;
     int length;
     int lineNumber;
+    int firstChar;
 };
 typedef struct List List;
 struct List
@@ -24,6 +25,6 @@ int removeElement(List * list, char * value);
 void afficherListe(List * list);
 List * getWordsFromFile(char * path);
 List *initialisationList();
-void insertion(List * list, char * stringToAdd, int line);
+void insertion(List * list, char * stringToAdd, int line, int firstChar);
 void fromListToDico (List * elements, char * destination);
 char *researchWord(List *List, char *word, int filter);

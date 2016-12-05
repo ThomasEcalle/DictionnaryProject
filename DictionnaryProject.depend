@@ -127,14 +127,14 @@
 
 1480648410 c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\models\lib\dictionnary.h
 
-<<<<<<< HEAD
-1480783409 c:\users\jean\documents\github\dictionnaryproject\gestbib.h
-=======
 1480648410 D
+
+1480780690 c:\users\jean\documents\github\dictionnaryproject\gestbib.h
+	"models/dictionnary.h"
 
 1480663831 source:c:\users\my-pc\documents\github\dictionnaryproject\controllers\controller_active_dictionary.c
 
-1480795198 source:c:\users\my-pc\documents\github\dictionnaryproject\controllers\controller_main_menu.c
+1480880633 source:c:\users\my-pc\documents\github\dictionnaryproject\controllers\controller_main_menu.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"
@@ -148,24 +148,24 @@
 
 1480663831 source:c:\users\my-pc\documents\github\dictionnaryproject\models\gestrech.c
 
-1480846990 source:c:\users\my-pc\documents\github\dictionnaryproject\models\gesttorth.c
+1480975969 source:c:\users\my-pc\documents\github\dictionnaryproject\models\gesttorth.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"../gestbib.h"
 	"../gesttorth.h"
 
-1480877987 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main2.c
+1480966142 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main2.c
+	<stdio.h>
+	<stdlib.h>
+	"../constantes.h"
+
+1480969950 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main3.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"
 	"../gestbib.h"
 	"../gesttorth.h"
-
-1480663831 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main3.c
-	<stdio.h>
-	<stdlib.h>
-	"../constantes.h"
 
 1480663831 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main4.c
 	<stdio.h>
@@ -179,13 +179,9 @@
 
 1480663831 ntes.h"
 
-1480780690 c:\users\jean\documents\github\dictionnaryproject\gestbib.h
-	"models/dictionnary.h"
->>>>>>> origin/master
+1480780690 gin/master
 
 1480780690 c:\users\jean\documents\github\dictionnaryproject\models\dictionnary.h
-
-1480780690 gin/master
 
 1480797903 source:c:\users\my-pc\documents\github\dictionnaryproject\main.c
 	<stdio.h>
@@ -193,22 +189,22 @@
 	<string.h>
 	"gestbib.h"
 
-1480880589 c:\users\my-pc\documents\github\dictionnaryproject\gestbib.h
+1480969264 c:\users\my-pc\documents\github\dictionnaryproject\gestbib.h
 
 1480795624 c:\users\my-pc\documents\github\dictionnaryproject\models\dictionnary.h
 
-1480847364 source:c:\users\my-pc\documents\github\dictionnaryproject\models\gestbib.c
+1480972214 source:c:\users\my-pc\documents\github\dictionnaryproject\models\gestbib.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<math.h>
 	"../gestbib.h"
 
-1480878097 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main1.c
+1480966164 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main1.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"
 	"../gestbib.h"
 
-1480846463 c:\users\my-pc\documents\github\dictionnaryproject\gesttorth.h
+1480970901 c:\users\my-pc\documents\github\dictionnaryproject\gesttorth.h
 

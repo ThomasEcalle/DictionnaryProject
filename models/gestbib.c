@@ -54,7 +54,7 @@ void destroyDictionary(char * path){
 void insertWord(char * path, char * word){
     List * list = getWordsFromFile(path);
 
-    insertion(list,word,0);
+    insertion(list,word,0,0);
 
     fromListToDico(list,path);
 }
@@ -223,10 +223,10 @@ List * getWordsFromFile(char * path)
     {
 
         char c = fgetc(file);
-
+        int numberOfCharThisLine = 0;
         while (1)
         {
-
+            numberOfCharThisLine++;
             if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90)) // IF C IS A LETTER
             {
                 count++;
@@ -243,6 +243,7 @@ List * getWordsFromFile(char * path)
                     if (c == '\n') retour = -(count+2);
                     fseek(file, retour, SEEK_CUR);  // WE GO BACK TO THE FIRST LETTER OF THE Element
                     char tmp = fgetc(file);
+                    int firstChar = numberOfCharThisLine - (count + 1);
                     for (i = 0; i < count; i++)
                     {
                          if (tmp >= 65 && tmp <= 90) // IF C IS AN UPPERCASE LETTER
@@ -256,7 +257,7 @@ List * getWordsFromFile(char * path)
                     }
                     if (strlen(string) >= 2 || string[0] == 'a')
                     {
-                        insertion(elementsList,string,line);
+                        insertion(elementsList,string,line,firstChar);
                     }
 
                     count = 0;
@@ -264,7 +265,11 @@ List * getWordsFromFile(char * path)
 
                 }
             }
-            if (c == '\n') line++;
+            if (c == '\n')
+            {
+                line++;
+                numberOfCharThisLine = 0;
+            }
             if (c == EOF) break;
             c = fgetc(file);
         }
@@ -288,7 +293,7 @@ List * initialisationList()
     return list;
 }
 
-void insertion(List * list, char * stringToAdd, int line)
+void insertion(List * list, char * stringToAdd, int line, int firstChar)
 {
     // NEW Element CREATION
     Element *ElementToAdd = malloc(sizeof(*ElementToAdd));
@@ -296,6 +301,7 @@ void insertion(List * list, char * stringToAdd, int line)
     ElementToAdd->chaine = stringToAdd;
     ElementToAdd->length = strlen(stringToAdd);
     ElementToAdd->lineNumber = line;
+    ElementToAdd->firstChar = firstChar;
 
 
     // INSERTION OF THE NEW Element AT FIRST POSITION
@@ -313,7 +319,7 @@ void afficherListe(List * list)
 
     while (actuel->next != NULL)
     {
-        printf("%s (%d)\n", actuel->chaine, actuel->lineNumber);
+        printf("%s (%d) commence au caractere %d et a une longueur de %d caracteres\n", actuel->chaine, actuel->lineNumber, actuel->firstChar, actuel->length);
         actuel = actuel->next;
     }
 }

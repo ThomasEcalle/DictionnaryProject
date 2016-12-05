@@ -36,7 +36,7 @@ List * compareList(List * first, List * second)
         }
         if (found >= second->length)
         {
-            insertion(newList,word1->chaine,word1->lineNumber);
+            insertion(newList,word1->chaine,word1->lineNumber,word1->firstChar);
 
         }
         found = 0;
@@ -45,4 +45,99 @@ List * compareList(List * first, List * second)
     }
     return newList;
 
+}
+
+List * generateFakeList()
+{
+    List * fake = NULL;
+    fake = initialisationList();
+    insertion(fake,"mythardolo",0,0);
+    insertion(fake,"paignoire",0,0);
+    insertion(fake,"bouton",0,0);
+    return fake;
+}
+
+void replaceWordsInFile (char * file, char * dico)
+{
+    List * list = getDifferentWords(file, dico);
+    List * fake = generateFakeList();
+
+
+
+    Element * w1 = list->first;
+    Element * w2 = fake->first;
+    while (w1->next != NULL)
+    {
+        w2->firstChar = w1->firstChar;
+//        w2->length = w1->length;
+        w2->lineNumber = w1->lineNumber;
+        w1 = w1->next;
+        w2 = w2->next;
+    }
+
+
+
+    putInFile(fake,file);
+
+}
+
+void putInFile (List * newList, char * filePath)
+{
+    FILE * file = fopen(filePath, "r+");
+    int count = 0;
+    int lines = 1;
+    if (file != NULL)
+    {
+        char c = fgetc(file);
+        while (c != EOF)
+        {
+
+            printf("count : %d char = %c\n",count,c);
+            int i,j;
+            if (c >= 97 && c <= 122)
+            {
+
+                Element * actual = newList->first;
+
+                while (actual->next != NULL)
+                {
+
+                    if (count == actual->firstChar && lines == actual->lineNumber)
+                    {
+                        fseek(file, -1, SEEK_CUR);
+                        for (j = 0; j < actual->length; j++)
+                        {
+                            fprintf(file,"%c",actual->chaine[j]);
+                            printf("%c",actual->chaine[j]);
+
+                        }
+                        count += actual->length;
+                        fseek(file, actual->length+1, SEEK_CUR);
+                        printf("\n");
+                    }
+                    actual = actual->next;
+                }
+            }
+
+
+
+            if (c == '\n')
+            {
+                count = 0;
+                lines++;
+                printf("line : %d   count = %d\n",lines,count);
+                c = fgetc(file);
+            }
+            else
+            {
+                c = fgetc(file);
+                count++;
+            }
+        }
+    }
+    else
+    {
+        printf("erreur lors de l'ouverture du fichier");
+    }
+    fclose(file);
 }
