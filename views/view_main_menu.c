@@ -102,7 +102,7 @@ void askForNumber (int * numberAsked, char * question, int min, int max)
 */
 void printMenu (char ** stringArray,int * userChoice)
 {
-    int size = strlen(stringArray);
+    int size = sizeof(stringArray);
     int i;
     int check = 0;
     while (!check){

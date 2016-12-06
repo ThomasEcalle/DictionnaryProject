@@ -11,46 +11,49 @@
 
 1477901340 source:c:\users\jean\documents\github\dictionnaryproject\controllers\controller_active_dictionary.c
 
-1480783031 source:c:\users\jean\documents\github\dictionnaryproject\controllers\controller_main_menu.c
+1481048004 source:c:\users\jean\documents\github\dictionnaryproject\controllers\controller_main_menu.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 	"../constantes.h"
 	"../view_main_menu.h"
 
 1478873611 c:\users\jean\documents\github\dictionnaryproject\constantes.h
 
-1480783410 source:c:\users\jean\documents\github\dictionnaryproject\main.c
+1481049233 source:c:\users\jean\documents\github\dictionnaryproject\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"gestbib.h"
-	"models/dictionnary.h"
 
 1478878213 c:\users\jean\documents\github\dictionnaryproject\controller_main_menu.h
 
 1477353800 c:\users\jean\documents\github\dictionnaryproject\controller_active_dictionary.h
 
-1477378814 source:c:\users\jean\documents\github\dictionnaryproject\tests\main1.c
+1481045436 source:c:\users\jean\documents\github\dictionnaryproject\tests\main1.c
+	<stdio.h>
+	<stdlib.h>
+	"../constantes.h"
+	"../gestbib.h"
+
+1481045436 source:c:\users\jean\documents\github\dictionnaryproject\tests\main2.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"
 
-1477378814 source:c:\users\jean\documents\github\dictionnaryproject\tests\main2.c
+1481045700 source:c:\users\jean\documents\github\dictionnaryproject\tests\main3.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"
-
-1477378814 source:c:\users\jean\documents\github\dictionnaryproject\tests\main3.c
-	<stdio.h>
-	<stdlib.h>
-	"../constantes.h"
+	"../gestbib.h"
+	"../gesttorth.h"
 
 1477378814 source:c:\users\jean\documents\github\dictionnaryproject\tests\main4.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"
 
-1480279891 source:c:\users\jean\documents\github\dictionnaryproject\views\view_main_menu.c
+1481048856 source:c:\users\jean\documents\github\dictionnaryproject\views\view_main_menu.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"
@@ -98,18 +101,23 @@
 
 1480279247 c:\users\jean\documents\github\dictionnaryproject\models\gestbib.c
 
-1480783410 source:c:\users\jean\documents\github\dictionnaryproject\models\gestbib.c
+1481049467 source:c:\users\jean\documents\github\dictionnaryproject\models\gestbib.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<math.h>
-	"dictionnary.h"
+	"../gestbib.h"
 
 1478878213 source:c:\users\jean\documents\github\dictionnaryproject\models\gestexpr.c
 
 1478878213 source:c:\users\jean\documents\github\dictionnaryproject\models\gestrech.c
 
-1478878213 source:c:\users\jean\documents\github\dictionnaryproject\models\gesttorth.c
+1481045436 source:c:\users\jean\documents\github\dictionnaryproject\models\gesttorth.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../gestbib.h"
+	"../gesttorth.h"
 
 1480529741 source:c:\users\my-pc\documents\projets\dictionnaryproject\dictionnaryproject\models\gestbib.c
 
@@ -129,8 +137,7 @@
 
 1480648410 D
 
-1480780690 c:\users\jean\documents\github\dictionnaryproject\gestbib.h
-	"models/dictionnary.h"
+1481045436 c:\users\jean\documents\github\dictionnaryproject\gestbib.h
 
 1480663831 source:c:\users\my-pc\documents\github\dictionnaryproject\controllers\controller_active_dictionary.c
 
@@ -207,4 +214,6 @@
 	"../gestbib.h"
 
 1480970901 c:\users\my-pc\documents\github\dictionnaryproject\gesttorth.h
+
+1481045436 c:\users\jean\documents\github\dictionnaryproject\gesttorth.h
 

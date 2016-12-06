@@ -34,7 +34,7 @@
     researchWord(dico, "dict", 10);
 
 
-}
+}*/
 int main()
 {
     printf("WELCOME IN THE DICTIONARIES ADMINISTRATOR\n"
@@ -51,4 +51,4 @@ int main()
         }
     }
     return 0;
-}*/
+}

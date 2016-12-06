@@ -48,6 +48,7 @@ void generateDictionary(char * formatText, char * dictionaryName){
 }
 
 void destroyDictionary(char * path){
+    fclose(path);
     remove(path);
 }
 
