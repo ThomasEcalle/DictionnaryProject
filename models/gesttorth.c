@@ -51,8 +51,8 @@ List * generateFakeList()
 {
     List * fake = NULL;
     fake = initialisationList();
-    insertion(fake,"mythardolo",0,0);
-    insertion(fake,"paignoire",0,0);
+    insertion(fake,"mytharda",0,0);
+    insertion(fake,"paignoiro",0,0);
     insertion(fake,"bouton",0,0);
     return fake;
 }
@@ -85,7 +85,7 @@ void putInFile (List * newList, char * filePath)
 {
     FILE * file = fopen(filePath, "r+");
     int count = 0;
-    int lines = 1;
+    int lines = 0;
     if (file != NULL)
     {
         char c = fgetc(file);
@@ -111,14 +111,13 @@ void putInFile (List * newList, char * filePath)
                             printf("%c",actual->chaine[j]);
 
                         }
-                        count += actual->length;
+                        count += actual->length+1;
                         fseek(file, actual->length+1, SEEK_CUR);
                         printf("\n");
                     }
                     actual = actual->next;
                 }
             }
-
 
 
             if (c == '\n')
