@@ -62,8 +62,6 @@ void replaceWordsInFile (char * file, char * dico)
     List * list = getDifferentWords(file, dico);
     List * fake = generateFakeList();
 
-
-
     Element * w1 = list->first;
     Element * w2 = fake->first;
     while (w1->next != NULL)
@@ -75,10 +73,9 @@ void replaceWordsInFile (char * file, char * dico)
         w2 = w2->next;
     }
 
-
-
-    putInFile(fake,file);
-
+    List * newlist = replaceWords(getWordsFromFile(file),fake);
+    fromListToFile(newlist,file);
+    //putInFile(fake,file);
 }
 
 void putInFile (List * newList, char * filePath)
@@ -88,6 +85,7 @@ void putInFile (List * newList, char * filePath)
     int lines = 0;
     if (file != NULL)
     {
+        afficherListe(newList);
         char c = fgetc(file);
         while (c != EOF)
         {
@@ -102,8 +100,9 @@ void putInFile (List * newList, char * filePath)
                 while (actual->next != NULL)
                 {
 
-                    if (count == actual->firstChar && lines == actual->lineNumber)
+                    if (count == actual->firstChar && lines+1 == actual->lineNumber)
                     {
+                        printf("\nokok\n");
                         fseek(file, -1, SEEK_CUR);
                         for (j = 0; j < actual->length; j++)
                         {
@@ -118,7 +117,6 @@ void putInFile (List * newList, char * filePath)
                     actual = actual->next;
                 }
             }
-
 
             if (c == '\n')
             {
@@ -140,3 +138,31 @@ void putInFile (List * newList, char * filePath)
     }
     fclose(file);
 }
+
+
+List * replaceWords (List * wordsFile, List * newWords)
+{
+    Element * word1 = wordsFile->first;
+    while (word1->next != NULL)
+    {
+        Element * word2 = newWords->first;
+        while (word2->next != NULL)
+        {
+            if (word1->firstChar == word2->firstChar && word1->lineNumber == word2->lineNumber)
+            {
+                word1->chaine = word2->chaine;
+                word1->length = word2->length;
+            }
+            word2 =  word2->next;
+        }
+        word1 = word1->next;
+    }
+    afficherListe(wordsFile);
+}
+
+void fromListToFile (List * list, char * path)
+{
+
+}
+
+

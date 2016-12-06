@@ -141,9 +141,10 @@
 
 1480663831 source:c:\users\my-pc\documents\github\dictionnaryproject\controllers\controller_active_dictionary.c
 
-1480880633 source:c:\users\my-pc\documents\github\dictionnaryproject\controllers\controller_main_menu.c
+1481051362 source:c:\users\my-pc\documents\github\dictionnaryproject\controllers\controller_main_menu.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 	"../constantes.h"
 	"../view_main_menu.h"
 
@@ -155,7 +156,7 @@
 
 1480663831 source:c:\users\my-pc\documents\github\dictionnaryproject\models\gestrech.c
 
-1480977947 source:c:\users\my-pc\documents\github\dictionnaryproject\models\gesttorth.c
+1481059146 source:c:\users\my-pc\documents\github\dictionnaryproject\models\gesttorth.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -167,7 +168,7 @@
 	<stdlib.h>
 	"../constantes.h"
 
-1480969950 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main3.c
+1481052519 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main3.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"
@@ -179,7 +180,7 @@
 	<stdlib.h>
 	"../constantes.h"
 
-1480795720 source:c:\users\my-pc\documents\github\dictionnaryproject\views\view_main_menu.c
+1481051362 source:c:\users\my-pc\documents\github\dictionnaryproject\views\view_main_menu.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"
@@ -190,7 +191,7 @@
 
 1480780690 c:\users\jean\documents\github\dictionnaryproject\models\dictionnary.h
 
-1480797903 source:c:\users\my-pc\documents\github\dictionnaryproject\main.c
+1481052662 source:c:\users\my-pc\documents\github\dictionnaryproject\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -200,7 +201,7 @@
 
 1480795624 c:\users\my-pc\documents\github\dictionnaryproject\models\dictionnary.h
 
-1480972214 source:c:\users\my-pc\documents\github\dictionnaryproject\models\gestbib.c
+1481051362 source:c:\users\my-pc\documents\github\dictionnaryproject\models\gestbib.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -213,7 +214,7 @@
 	"../constantes.h"
 	"../gestbib.h"
 
-1480970901 c:\users\my-pc\documents\github\dictionnaryproject\gesttorth.h
+1481059033 c:\users\my-pc\documents\github\dictionnaryproject\gesttorth.h
 
 1481045436 c:\users\jean\documents\github\dictionnaryproject\gesttorth.h
 
