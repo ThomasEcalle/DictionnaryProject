@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "../constantes.h"
 #include "../view_main_menu.h"
 
@@ -28,6 +29,7 @@ void initMainMenu(int* isAFileSelected, char* path){
             useExistantDictionaryChoice(isAFileSelected, path);
             break;
         case 3:
+            convertFileIntoDictionaryChoice(isAFileSelected, path);
             break;
         case 4:
             destroyDictionaryChoice(isAFileSelected, path);
@@ -51,18 +53,26 @@ void initMainMenu(int* isAFileSelected, char* path){
 *   chemin valide.
 */
 void createDictionaryChoice(int* isAFileSelected, char* path){
-    printf("Please select a path for the dictionary.\nYour path : ");
+    printf("Please select a path for the dictionary (e to exit).\nYour path : ");
     scanf("%s", path);
-
-    if(fopen(path, "r") != NULL){ // Verifie que le fichier n'existe pas
+    while(strcmp(path, "e") != 0 && fopen(path, "r") != NULL){ // Verifie que le fichier n'existe pas
         free(path);
         path = malloc(sizeof(char) * 255);
-        printErrorMessage ("This path already contain a file.\nPlease select another path.");
+        printErrorMessage ("This path already contain a file.\nPlease select another path (e to exit).");
         printf("\nYour new path : ");
         scanf("%s", path);
     }
-    *isAFileSelected = 1;
-    //createDictionary(&path); /// !----- fonction du model permettant la creation du dictionnaire*/
+    if(strcmp(path, "e") != 0){
+        *isAFileSelected = 1;
+        createDictionary(path);
+        clearConsole();
+        if(fopen(path, "r") != NULL){
+            printf("\nYour file has been created !\n\n");
+        }
+        else{
+            printWarning("\nAn error occured, the file hasn't been created.\n\n");
+        }
+    }
 }
 
 /*
@@ -73,9 +83,55 @@ void createDictionaryChoice(int* isAFileSelected, char* path){
 *   formatte comme un dictionnaire, le considere comme un dictionnaire actif.
 */
 void useExistantDictionaryChoice(int* isAFileSelected, char* path){
-    /*path = NULL;
-    checkNotNullAndFormatted(path);
-    *isAFileSelected = 1;*/
+    printf("Please select the path of the dictionary (e to exit).\nYour path : ");
+    scanf("%s", path);
+    while(strcmp(path, "e") != 0 && fopen(path, "r") == NULL){ // Verifie que le fichier n'existe pas
+        free(path);
+        path = malloc(sizeof(char) * 255);
+        printErrorMessage ("The file doesn't exist.\nPlease select another path (e to exit).");
+        printf("\nYour new path : ");
+        scanf("%s", path);
+    }
+    if(strcmp(path, "e") != 0){
+        *isAFileSelected = 1;
+        clearConsole();
+    }
+}
+
+void convertFileIntoDictionaryChoice(int* isAFileSelected, char* path){
+    printf("Please select the path of the file that your want to convert (e to exit).\nYour path : ");
+    char* file = malloc(sizeof(char) * 255);
+    scanf("%s", file);
+    while(strcmp(file, "e") != 0 && fopen(file, "r") == NULL){ // Verifie que le fichier n'existe pas
+        free(file);
+        file = malloc(sizeof(char) * 255);
+        printErrorMessage ("The file doesn't exist.\nPlease select another path (e to exit).");
+        printf("\nYour new path : ");
+        scanf("%s", file);
+    }
+    if(strcmp(path, "e") == 0){
+        return 0;
+    }
+    printf("Please select the path of the file to create (e to exit).\nYour path : ");
+    scanf("%s", path);
+    while(strcmp(path, "e") != 0 && fopen(path, "r") != NULL){ // Verifie que le fichier n'existe pas
+        free(path);
+        path = malloc(sizeof(char) * 255);
+        printErrorMessage ("The file doesn't exist.\nPlease select another path (e to exit).");
+        printf("\nYour new path : ");
+        scanf("%s", path);
+    }
+    if(strcmp(path, "e") != 0){
+        *isAFileSelected = 1;
+        clearConsole();
+        generateDictionary(file, path);
+        if(fopen(path, "r") != NULL){
+            printf("The file has been created.");
+        }
+        else{
+            printWarning("An error occured. The file hasn't been created.");
+        }
+    }
 }
 
 /*
@@ -86,10 +142,26 @@ void useExistantDictionaryChoice(int* isAFileSelected, char* path){
 *   formatte comme un dictionnaire, le supprime.
 */
 void destroyDictionaryChoice(int* isAFileSelected, char* path){
-    /*path = NULL;
-    checkNotNullAndFormatted(path);
-    destroyDictionary(path);
-    *isAFileSelected = 0;*/
+    printf("Please select the path for the dictionary (e to exit).\nYour path : ");
+    scanf("%s", path);
+    while(strcmp(path, "e") != 0 && fopen(path, "r") == NULL){ // Verifie que le fichier n'existe pas
+        free(path);
+        path = malloc(sizeof(char) * 255);
+        printErrorMessage ("The file doesn't exist.\nPlease select another path (e to exit).");
+        printf("\nYour new path : ");
+        scanf("%s", path);
+    }
+    if(strcmp(path, "e") != 0){
+        clearConsole();
+        destroyDictionary(path);
+
+        if(fopen(path, "r") == NULL){
+            printf("\nThe dictionary has been destroyed !\n\n");
+        }
+        else{
+            printWarning("An error occured, the file hasn't been destroyed.");
+        }
+    }
 }
 
 /*
