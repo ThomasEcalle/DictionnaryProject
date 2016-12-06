@@ -5,11 +5,11 @@
 #include "../gesttorth.h"
 
 
-int main()
-{
-    replaceWordsInFile ("thomas.txt", "thomas.dico");
-
-
-}
+//int main()
+//{
+//    replaceWordsInFile ("thomas.txt", "thomas.dico");
+//
+//
+//}
 
 
