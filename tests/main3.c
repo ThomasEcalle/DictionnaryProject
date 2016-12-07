@@ -4,12 +4,12 @@
 #include "../gestbib.h"
 #include "../gesttorth.h"
 
-
+/*
 //int main()
 //{
 //    replaceWordsInFile ("thomas.txt", "thomas.dico");
 //
 //
 //}
-
+*/
 

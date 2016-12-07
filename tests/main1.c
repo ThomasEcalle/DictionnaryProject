@@ -3,7 +3,7 @@
 #include "../constantes.h"
 #include "../gestbib.h"
 
-
+/*
 //int main()
 //{
 ////   generateDictionary("thomas.txt","thomas.dico");
@@ -24,4 +24,4 @@
 //    char * mot = researchWordInFIle("thomas.dico","voiles",14);
 //    printf("%s",mot);
 //}
-
+*/

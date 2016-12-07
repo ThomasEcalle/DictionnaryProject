@@ -32,9 +32,8 @@
     dico->first->next->next->next->next->length = strlen("di");
     dico->length = 5;
     researchWord(dico, "dict", 10);
+}*/
 
-
-}
 int main()
 {
     printf("WELCOME IN THE DICTIONARIES ADMINISTRATOR\n"
@@ -44,11 +43,11 @@ int main()
     while(1 == 1){
         printf("What do you want to do ?\n");
         if(isAFileSelected){
-            break;
+            initActiveDico(&isAFileSelected, path);
         }
         else{
             initMainMenu(&isAFileSelected, path);
         }
     }
     return 0;
-}*/
+}

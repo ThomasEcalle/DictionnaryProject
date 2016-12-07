@@ -35,6 +35,7 @@ void initMainMenu(int* isAFileSelected, char* path){
             destroyDictionaryChoice(isAFileSelected, path);
             break;
         case 5:
+            exit(0);
             break;
         default:
             printf("This is not a valid option\n");
