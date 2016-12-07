@@ -3,7 +3,7 @@
 #include "../constantes.h"
 #include "../gestbib.h"
 
-
+/*
 //int main()
 //{
 ////   generateDictionary("thomas.txt","thomas.dico");
@@ -27,4 +27,4 @@
 //    generateDictionary("thomas.txt","google.dico");insertWord("google.dico","rambo");
 //
 //}
-
+*/
