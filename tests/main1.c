@@ -21,7 +21,10 @@
 ////    mot = researchWordInFIle("thomas.dico",mot,5);
 ////      printf("%s",mot);
 //
-//    char * mot = researchWordInFIle("thomas.dico","voiles",14);
-//    printf("%s",mot);
+////    char * mot = researchWordInFIle("thomas.dico","voiles",14);
+////    printf("%s",mot);
+//
+//    generateDictionary("thomas.txt","google.dico");insertWord("google.dico","rambo");
+//
 //}
 

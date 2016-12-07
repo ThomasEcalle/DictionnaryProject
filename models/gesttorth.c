@@ -74,7 +74,7 @@ void replaceWordsInFile (char * file, char * dico)
     }
 
     List * newlist = replaceWords(getWordsFromFile(file),fake);
-    fromListToFile(newlist,file);
+    //fromListToFile(newlist,file);
     //putInFile(fake,file);
 }
 
@@ -160,18 +160,18 @@ List * replaceWords (List * wordsFile, List * newWords)
     afficherListe(wordsFile);
 }
 
-void fromListToFile (List * list, char * path)
-{
-    FILE file = NULL;
-    file = fopen(path,"w");
-    int lineNumber = 1;
-    int count = 0;
-    if (file)
-    {
-
-        fclose(file);
-    }
-
-}
+//void fromListToFile (List * list, char * path)
+//{
+//    FILE file = NULL;
+//    file = fopen(path,"w");
+//    int lineNumber = 1;
+//    int count = 0;
+//    if (file)
+//    {
+//
+//        fclose(file);
+//    }
+//
+//}
 
 
