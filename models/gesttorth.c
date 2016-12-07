@@ -51,8 +51,10 @@ List * generateFakeList()
 {
     List * fake = NULL;
     fake = initialisationList();
-    insertion(fake,"mytharda",0,0);
+
     insertion(fake,"paignoiro",0,0);
+    insertion(fake,"mytharda",0,0);
+
     insertion(fake,"bouton",0,0);
     return fake;
 }
@@ -73,25 +75,31 @@ void replaceWordsInFile (char * file, char * dico)
         w2 = w2->next;
     }
 
-    List * newlist = replaceWords(getWordsFromFile(file),fake);
+    //List * newlist = replaceWords(getWordsFromFile(file),fake);
     //fromListToFile(newlist,file);
-    //putInFile(fake,file);
+    putInFile(fake,file);
 }
+
+
 
 void putInFile (List * newList, char * filePath)
 {
-    FILE * file = fopen(filePath, "r+");
-    int count = 0;
-    int lines = 0;
-    if (file != NULL)
+    FILE * origin = NULL;
+    FILE * tempFile = NULL;
+
+    origin = fopen(filePath,"r");
+    tempFile = fopen("temp.txt","w");
+    if (origin != NULL && tempFile != NULL)
     {
-        afficherListe(newList);
-        char c = fgetc(file);
+        int count = 0;
+        int lines = 1;
+        char actualChar;
+        char c = fgetc(origin);
         while (c != EOF)
         {
-
-            printf("count : %d char = %c\n",count,c);
-            int i,j;
+            actualChar = c;
+            //fprintf(tempFile,"%c",c);
+            int i, j;
             if (c >= 97 && c <= 122)
             {
 
@@ -100,43 +108,101 @@ void putInFile (List * newList, char * filePath)
                 while (actual->next != NULL)
                 {
 
-                    if (count == actual->firstChar && lines+1 == actual->lineNumber)
+                    if (count == actual->firstChar && lines == actual->lineNumber)
                     {
-                        printf("\nokok\n");
-                        fseek(file, -1, SEEK_CUR);
+                        fseek(tempFile, -1, SEEK_CUR);
                         for (j = 0; j < actual->length; j++)
                         {
-                            fprintf(file,"%c",actual->chaine[j]);
+                            fprintf(tempFile,"%c",actual->chaine[j]);
                             printf("%c",actual->chaine[j]);
-
                         }
                         count += actual->length+1;
-                        fseek(file, actual->length+1, SEEK_CUR);
-                        printf("\n");
+                        fseek(tempFile, 1, SEEK_CUR);
                     }
                     actual = actual->next;
                 }
             }
+
 
             if (c == '\n')
             {
                 count = 0;
                 lines++;
                 printf("line : %d   count = %d\n",lines,count);
-                c = fgetc(file);
+                c = fgetc(origin);
             }
             else
             {
-                c = fgetc(file);
+                c = fgetc(origin);
                 count++;
             }
+
         }
+        fclose(origin);
+        fclose(tempFile);
     }
     else
     {
-        printf("erreur lors de l'ouverture du fichier");
+        printf("erreur de creation de fichier");
     }
-    fclose(file);
+//    FILE * file = fopen(filePath, "r+");
+//    int count = 0;
+//    int lines = 1;
+//    if (file != NULL)
+//    {
+//
+//        afficherListe(newList);
+//        char c = fgetc(file);
+//        while (c != EOF)
+//        {
+//
+//            printf("count : %d char = %c\n",count,c);
+//            int i,j;
+//            if (c >= 97 && c <= 122)
+//            {
+//
+//                Element * actual = newList->first;
+//
+//                while (actual->next != NULL)
+//                {
+//
+//                    if (count == actual->firstChar && lines == actual->lineNumber)
+//                    {
+//                        printf("\nokok\n");
+//                        fseek(file, -1, SEEK_CUR);
+//                        for (j = 0; j < actual->length; j++)
+//                        {
+//                            fprintf(file,"%c",actual->chaine[j]);
+//                            printf("%c",actual->chaine[j]);
+//
+//                        }
+//                        count += actual->length+1;
+//                        fseek(file, 1, SEEK_CUR);
+//                        printf("\n");
+//                    }
+//                    actual = actual->next;
+//                }
+//            }
+//
+//            if (c == '\n')
+//            {
+//                count = 0;
+//                lines++;
+//                printf("line : %d   count = %d\n",lines,count);
+//                c = fgetc(file);
+//            }
+//            else
+//            {
+//                c = fgetc(file);
+//                count++;
+//            }
+//        }
+//    }
+//    else
+//    {
+//        printf("erreur lors de l'ouverture du fichier");
+//    }
+//    fclose(file);
 }
 
 

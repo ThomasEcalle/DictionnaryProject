@@ -144,9 +144,14 @@
 
 1481045436 c:\users\jean\documents\github\dictionnaryproject\gestbib.h
 
-1480663831 source:c:\users\my-pc\documents\github\dictionnaryproject\controllers\controller_active_dictionary.c
+1481141215 source:c:\users\my-pc\documents\github\dictionnaryproject\controllers\controller_active_dictionary.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../constantes.h"
+	"../view_main_menu.h"
 
-1481051362 source:c:\users\my-pc\documents\github\dictionnaryproject\controllers\controller_main_menu.c
+1481141215 source:c:\users\my-pc\documents\github\dictionnaryproject\controllers\controller_main_menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -161,7 +166,7 @@
 
 1480663831 source:c:\users\my-pc\documents\github\dictionnaryproject\models\gestrech.c
 
-1481136403 source:c:\users\my-pc\documents\github\dictionnaryproject\models\gesttorth.c
+1481143614 source:c:\users\my-pc\documents\github\dictionnaryproject\models\gesttorth.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -173,7 +178,7 @@
 	<stdlib.h>
 	"../constantes.h"
 
-1481061522 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main3.c
+1481141445 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main3.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"
@@ -196,7 +201,7 @@
 
 1480780690 c:\users\jean\documents\github\dictionnaryproject\models\dictionnary.h
 
-1481052662 source:c:\users\my-pc\documents\github\dictionnaryproject\main.c
+1481141454 source:c:\users\my-pc\documents\github\dictionnaryproject\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -213,7 +218,7 @@
 	<math.h>
 	"../gestbib.h"
 
-1481136367 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main1.c
+1481141215 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main1.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"

@@ -34,20 +34,20 @@
     researchWord(dico, "dict", 10);
 }*/
 
-int main()
-{
-    printf("WELCOME IN THE DICTIONARIES ADMINISTRATOR\n"
-           "-----------------------------------------\n");
-    int isAFileSelected = 0;
-    char* path = malloc(sizeof(char) * 255);
-    while(1 == 1){
-        printf("What do you want to do ?\n");
-        if(isAFileSelected){
-            initActiveDico(&isAFileSelected, path);
-        }
-        else{
-            initMainMenu(&isAFileSelected, path);
-        }
-    }
-    return 0;
-}
+//int main()
+//{
+//    printf("WELCOME IN THE DICTIONARIES ADMINISTRATOR\n"
+//           "-----------------------------------------\n");
+//    int isAFileSelected = 0;
+//    char* path = malloc(sizeof(char) * 255);
+//    while(1 == 1){
+//        printf("What do you want to do ?\n");
+//        if(isAFileSelected){
+//            initActiveDico(&isAFileSelected, path);
+//        }
+//        else{
+//            initMainMenu(&isAFileSelected, path);
+//        }
+//    }
+//    return 0;
+//}
