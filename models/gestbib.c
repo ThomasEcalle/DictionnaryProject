@@ -5,11 +5,18 @@
 #include "../gestbib.h"
 int compare(char *a, char *b)
 {
+    int diff = 0;
     int len1 = strlen(a);
     int len2 = strlen(b);
     if (len1 > len2)
         return compare(b, a);
-    return len2 - len1 ;
+    int i = 0;
+    for (; i < len1; ++i)
+    {
+        if (a[i] != b[i])
+            ++diff;
+    }
+    return diff + (len2 - len1) ;
 }
 char *substr(char *src, int len)
 {
@@ -81,7 +88,10 @@ int propostitionResercheMot (char * wordToFind, char * dicoPath)
     }
     return result;
 }
-
+char *research(List *List, char *word)
+{
+    return researchWord(List, word, 0);
+}
 char *researchWord(List *List, char *word, int filter)
 {
     char *closest = "";
@@ -98,12 +108,11 @@ char *researchWord(List *List, char *word, int filter)
             continue;
         }
 
-        char *tmp = substr(Element->chaine, len);
+       // char *tmp = substr(Element->chaine, len);
 
 //        debugChar("word", word);
 //        debugChar("TMP", tmp);
-        if (strcmp(tmp, word) == 0)
-        {
+
 //            debugChar("Research word : on entre dans debut commun", Element->chaine);
             int diff = compare(Element->chaine,word);
 //            debugChar(word, Element->chaine);
@@ -122,7 +131,7 @@ char *researchWord(List *List, char *word, int filter)
                 }
 
             }
-        }
+
 //        debugChar("CLOSEST :", closest);
         ++i;
     }
