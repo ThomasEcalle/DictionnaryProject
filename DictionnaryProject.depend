@@ -157,14 +157,14 @@
 
 1481380255 c:\users\jean\documents\github\dictionnaryproject\gestbib.h
 
-1481141215 source:c:\users\my-pc\documents\github\dictionnaryproject\controllers\controller_active_dictionary.c
+1481381553 source:c:\users\my-pc\documents\github\dictionnaryproject\controllers\controller_active_dictionary.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"../constantes.h"
 	"../view_main_menu.h"
 
-1481141215 source:c:\users\my-pc\documents\github\dictionnaryproject\controllers\controller_main_menu.c
+1481381553 source:c:\users\my-pc\documents\github\dictionnaryproject\controllers\controller_main_menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -173,11 +173,11 @@
 
 1480663831 c:\users\my-pc\documents\github\dictionnaryproject\constantes.h
 
-1481380579 c:\users\my-pc\documents\github\dictionnaryproject\view_main_menu.h
+1481391061 c:\users\my-pc\documents\github\dictionnaryproject\view_main_menu.h
 
 1480663831 source:c:\users\my-pc\documents\github\dictionnaryproject\models\gestexpr.c
 
-1481377177 source:c:\users\my-pc\documents\github\dictionnaryproject\models\gestrech.c
+1481390899 source:c:\users\my-pc\documents\github\dictionnaryproject\models\gestrech.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -191,15 +191,9 @@
 	"../gestbib.h"
 	"../gesttorth.h"
 
-1481380431 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main2.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"../constantes.h"
-	"../gestbib.h"
-	"../gestrech.h"
+1481390900 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main2.c
 
-1481380029 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main3.c
+1481390900 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main3.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"
@@ -224,13 +218,15 @@
 
 1480780690 c:\users\jean\documents\github\dictionnaryproject\models\dictionnary.h
 
-1481377177 source:c:\users\my-pc\documents\github\dictionnaryproject\main.c
+1481390899 source:c:\users\my-pc\documents\github\dictionnaryproject\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	"controller_main_menu.h"
+	"controller_active_dictionary.h"
 	"gestbib.h"
 
-1481377177 c:\users\my-pc\documents\github\dictionnaryproject\gestbib.h
+1481391189 c:\users\my-pc\documents\github\dictionnaryproject\gestbib.h
 
 1480795624 c:\users\my-pc\documents\github\dictionnaryproject\models\dictionnary.h
 
@@ -341,4 +337,8 @@
 	"../constantes.h"
 	"../gestbib.h"
 	"../gesttorth.h"
+
+1480663831 c:\users\my-pc\documents\github\dictionnaryproject\controller_main_menu.h
+
+1480663831 c:\users\my-pc\documents\github\dictionnaryproject\controller_active_dictionary.h
 
