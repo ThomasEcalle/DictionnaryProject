@@ -20,15 +20,17 @@ void initActiveDico(int* isAFileSelected, char* path){
     printMenu (choicesArray, &userChoice);
     switch(userChoice){
         case 1:
-
+            listWordChoice(path);
             break;
         case 2:
             insertWordChoice(isAFileSelected, path);
             break;
         case 3:
+            researchWordChoice(path);
             break;
         case 4:
             free(path);
+            path = malloc(sizeof(char) * 255);
             *isAFileSelected = 0;
             break;
         case 5:
@@ -38,6 +40,10 @@ void initActiveDico(int* isAFileSelected, char* path){
             printf("This is not a valid option\n");
             break;
     }
+}
+
+void listWordChoice(char* path){
+    afficherListe(getWordsFromFile(path));
 }
 
 void insertWordChoice(int* isAFileSelected, char* path){
@@ -55,4 +61,17 @@ void insertWordChoice(int* isAFileSelected, char* path){
         insertWord(path, word);
         printf("\nYour word has been added to the dictionary !\n");
     }
+}
+
+void researchWordChoice(char* path){
+    char* word = malloc(sizeof(char) * 255);
+    printf("Please type the word you want to search (e to exit).\nYour word : ");
+    scanf("%s", word);
+    if(strcmp(word, "e") == 0){
+        return 0;
+    }
+    int threshold;
+    printf("Please choose the threshold of your research.\nThreshold : ");
+    scanf("%d", threshold);
+    researchWordInFIle(path, word, threshold);
 }

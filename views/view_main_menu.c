@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "../gestbib.h"
 #include "../constantes.h"
 
 /*

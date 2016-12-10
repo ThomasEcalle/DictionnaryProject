@@ -5,7 +5,7 @@
 #include "../gestbib.h"
 #include "../gestrech.h"
 
-
+/*
 int main(void)
 {
     List *dico = malloc(sizeof (List));
@@ -35,4 +35,4 @@ int main(void)
         debugChar("mot",list->chaine);
         list = list->next;
     }
-}
+}*/
