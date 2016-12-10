@@ -193,34 +193,39 @@ void printWarning(char * warning)
             it add a number to the word and then display them by "block" in order not to diplay a too big number
             of word in one time
 */
-void printWordsList (char ** array, int size, int interval)
+
+void printWordsList (List * listToPrint, int interval)
 {
     char * warning = "You have seen all the words";
+    List * list = putListInOrder(listToPrint);
     int i;
     int check = 0;
     int actual = 0;
     char choice = 0;
-    if (size > interval)
+    if (list->length > interval)
     {
+        Element * word = list->first;
         while (!check)
         {
             printf("\n");
            for (i = actual; i < actual + interval; i++)
             {
-                if (i < size)
+                if (i < list->length)
                 {
-                     printf("%d)%s\n",i+1,array[i]);
+                     printf("%d)%s\n",i+1,word->chaine);
+                     word = word->next;
                 }
             }
             actual = i;
-            if (actual >= size)
+            if (actual >= list->length)
             {
-                 printWarning(warning);
+                 printf("%s",warning);
                  check++;
             }
             else
             {
                 printf("\nPress any key to continue or 'n' to stop\n");
+
                 scanf("%c",&choice);
                 emptyBuffer();
                 if (choice == 'n')
@@ -232,14 +237,30 @@ void printWordsList (char ** array, int size, int interval)
     }
     else
     {
-        for (i = 0; i < size; i++)
-        {
-            printf("*%s\n",array[i]);
-        }
-        printWarning(warning);
+        i = 0;
+       Element * word = list->first;
+       while (word->next != NULL)
+       {
+           printf("%d)%s\n",i+1,word->chaine);
+           i++;
+           word = word->next;
+       }
     }
 }
 
+
+List * putListInOrder (List * list)
+{
+    List * newone = initialisationList();
+    Element * actual = list->first;
+    while (actual->next != NULL)
+    {
+        printf("%s\n",actual->chaine);
+        insertion(newone,actual->chaine);
+        actual = actual->next;
+    }
+    return newone;
+}
 
 void clearConsole()
 {
