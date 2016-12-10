@@ -4,15 +4,18 @@
 #include <math.h>
 #include "../gestbib.h"
 
-Element *researchWordList(List *List, char *word, int filter)
+List *researchWordList(List *list, char *word, int filter)
 {
+  //  debugInt("len", list->length);
     Element *closest = malloc(sizeof (Element));
-    Element *head = closest;
+    List *head = malloc(sizeof (List));
+    head->first = closest;
+    head->length = 0;
     int len = strlen(word);
     int i;
     Element *Element = malloc(sizeof (Element));
-    Element = List->first;
-    for (i = 0; i < List->length; Element = Element->next)
+    Element = list->first;
+    for (i = 0; i < list->length; Element = Element->next)
     {
  //debugChar("", "AVANT diff");
             int diff = compare(Element->chaine,word);
@@ -24,7 +27,8 @@ Element *researchWordList(List *List, char *word, int filter)
                     filter = diff;
                //     debugChar("mot qui entre dans la liste: ",Element->chaine );
                     closest->chaine = Element->chaine;
-                    if (i < List->length -1)
+                    head->length += 1;
+                    if (i < list->length -1)
                     {
                         closest->next = malloc(sizeof (Element));
                         closest = closest->next;

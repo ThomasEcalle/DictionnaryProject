@@ -255,3 +255,90 @@
 
 1481377177 c:\users\my-pc\documents\github\dictionnaryproject\gestrech.h
 
+1481385794 source:c:\users\robin\documents\c\dico\dictionnaryproject\controllers\controller_active_dictionary.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../constantes.h"
+	"../view_main_menu.h"
+
+1481223750 c:\users\robin\documents\c\dico\dictionnaryproject\constantes.h
+
+1481385794 c:\users\robin\documents\c\dico\dictionnaryproject\view_main_menu.h
+
+1481385794 source:c:\users\robin\documents\c\dico\dictionnaryproject\controllers\controller_main_menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../constantes.h"
+	"../view_main_menu.h"
+
+1481385794 source:c:\users\robin\documents\c\dico\dictionnaryproject\models\gestbib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"../gestbib.h"
+
+1481225915 c:\users\robin\documents\c\dico\dictionnaryproject\gestbib.h
+
+1481223750 source:c:\users\robin\documents\c\dico\dictionnaryproject\models\gestexpr.c
+
+1481390456 source:c:\users\robin\documents\c\dico\dictionnaryproject\models\gestrech.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"../gestbib.h"
+
+1481385794 source:c:\users\robin\documents\c\dico\dictionnaryproject\models\gesttorth.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../gestbib.h"
+	"../gesttorth.h"
+
+1481223750 c:\users\robin\documents\c\dico\dictionnaryproject\gesttorth.h
+
+1481389900 source:c:\users\robin\documents\c\dico\dictionnaryproject\tests\main2.c
+
+1481226145 c:\users\robin\documents\c\dico\dictionnaryproject\gestrech.h
+
+1481223750 source:c:\users\robin\documents\c\dico\dictionnaryproject\tests\main4.c
+	<stdio.h>
+	<stdlib.h>
+	"../constantes.h"
+
+1481385794 source:c:\users\robin\documents\c\dico\dictionnaryproject\views\view_main_menu.c
+	<stdio.h>
+	<stdlib.h>
+	"../gestbib.h"
+	"../constantes.h"
+	"../gestbib.h"
+	"../view_main_menu.h"
+
+1481385924 source:c:\users\robin\documents\c\dico\dictionnaryproject\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"controller_main_menu.h"
+	"controller_active_dictionary.h"
+	"gestbib.h"
+
+1481223750 c:\users\robin\documents\c\dico\dictionnaryproject\controller_main_menu.h
+
+1481223750 c:\users\robin\documents\c\dico\dictionnaryproject\controller_active_dictionary.h
+
+1481225819 source:c:\users\robin\documents\c\dico\dictionnaryproject\tests\main1.c
+	<stdio.h>
+	<stdlib.h>
+	"../constantes.h"
+	"../gestbib.h"
+
+1481390494 source:c:\users\robin\documents\c\dico\dictionnaryproject\tests\main3.c
+	<stdio.h>
+	<stdlib.h>
+	"../constantes.h"
+	"../gestbib.h"
+	"../gesttorth.h"
+

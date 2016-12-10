@@ -4,7 +4,7 @@
 #include "../gestbib.h"
 #include "../gesttorth.h"
 
-/*
+
 int main()
 {
     List * test = getDifferentWords("thomas.txt","thomas.dico");
@@ -13,7 +13,7 @@ int main()
 
     List * dicoWords = getWordsFromFile("thomas.dico");
 
-    while (actual->next != NULL)
+  /*  while (actual->next != NULL)
     {
         Element * e = researchWordList(dicoWords,"maiso",3);
         if (e->next != NULL)
@@ -26,9 +26,17 @@ int main()
         }
 
         actual = actual->next;
+    }*/
+     List *e = researchWordList(dicoWords,"maiso",3);
+     int i = 0;
+    while (i < e->length)
+    {
+        debugChar("",e->first->chaine);
+        e->first = e->first->next;
+        ++i;
     }
 }
-*/
+
 
 
 
