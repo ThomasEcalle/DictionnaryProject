@@ -73,21 +73,7 @@ void researchWordInFIle(char * path, char * word, int filter)
     researchWord(list,word,filter);
 }
 
-int propostitionResercheMot (char * wordToFind, char * dicoPath)
-{
-    int result = 0;
-    List * wordsFromDico = getWordsFromFile(dicoPath);
-    Element * word = wordsFromDico->first;
-    while (word->next != NULL)
-    {
-        if (strcmp(word->chaine,wordToFind) == 0)
-        {
-            result = 1;
-        }
-        word = word->next;
-    }
-    return result;
-}
+
 char *research(List *List, char *word)
 {
     return researchWord(List, word, 0);
