@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../constantes.h"
+#include "../gestbib.h"
+#include "../view_main_menu.h"
 
 /*
 *   Input : char * answer -> the String we want the user to fill
@@ -256,7 +258,7 @@ List * putListInOrder (List * list)
     while (actual->next != NULL)
     {
         printf("%s\n",actual->chaine);
-        insertion(newone,actual->chaine);
+        insertion(newone,actual->chaine,0,0);
         actual = actual->next;
     }
     return newone;

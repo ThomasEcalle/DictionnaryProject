@@ -5,11 +5,30 @@
 #include "../gesttorth.h"
 
 
-/*int main()
+int main()
 {
-    replaceWordsInFile ("thomas.txt", "thomas.dico");
+    List * test = getDifferentWords("thomas.txt","thomas.dico");
+
+    Element * actual = test->first;
+
+    List * dicoWords = getWordsFromFile("thomas.dico");
+
+    while (actual->next != NULL)
+    {
+        Element * e = researchWordList(dicoWords,"maiso",3);
+        if (e->next != NULL)
+        {
+            printf("%s\n",e->chaine);
+        }
+        else
+        {
+            printf("\npas de correspondance\n");
+        }
+
+        actual = actual->next;
+    }
 
 
-}*/
+}
 
 
