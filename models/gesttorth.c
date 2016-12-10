@@ -98,7 +98,7 @@ void putInFile (List * newList, char * filePath)
         while (c != EOF)
         {
             actualChar = c;
-            //fprintf(tempFile,"%c",c);
+            fprintf(tempFile,"%c",c);
             int i, j;
             if (c >= 97 && c <= 122)
             {
@@ -110,14 +110,14 @@ void putInFile (List * newList, char * filePath)
 
                     if (count == actual->firstChar && lines == actual->lineNumber)
                     {
-                        fseek(tempFile, -1, SEEK_CUR);
+                        //fseek(tempFile, -1, SEEK_CUR);
                         for (j = 0; j < actual->length; j++)
                         {
                             fprintf(tempFile,"%c",actual->chaine[j]);
                             printf("%c",actual->chaine[j]);
                         }
                         count += actual->length+1;
-                        fseek(tempFile, 1, SEEK_CUR);
+                        fseek(origin, actual->length, SEEK_CUR);
                     }
                     actual = actual->next;
                 }
