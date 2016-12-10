@@ -2,13 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 //#include "constantes.h"
-//#include "controller_main_menu.h"
-//#include "controller_active_dictionary.h"
+#include "controller_main_menu.h"
+#include "controller_active_dictionary.h"
 #include "gestbib.h"
 
 
 
-int main()
+/*int main()
 {
     printf("WELCOME IN THE DICTIONARIES ADMINISTRATOR\n"
            "-----------------------------------------\n");
@@ -24,4 +24,4 @@ int main()
         }
     }
     return 0;
-}
+}*/

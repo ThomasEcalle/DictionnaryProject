@@ -1,1 +1,1 @@
-Element *researchWordList(List *List, char *word, int filter);
+List *researchWordList(List *List, char *word, int filter);
