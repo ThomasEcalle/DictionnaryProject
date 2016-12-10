@@ -25,10 +25,12 @@
 
 1478873611 c:\users\jean\documents\github\dictionnaryproject\constantes.h
 
-1481381274 source:c:\users\jean\documents\github\dictionnaryproject\main.c
+1481381890 source:c:\users\jean\documents\github\dictionnaryproject\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	"controller_main_menu.h"
+	"controller_active_dictionary.h"
 	"gestbib.h"
 
 1478878213 c:\users\jean\documents\github\dictionnaryproject\controller_main_menu.h
