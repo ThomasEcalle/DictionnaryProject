@@ -5,3 +5,4 @@ void replaceWordsInFile (char * file, char * dico);
 void putInFile (List * newList, char * dico);
 List * replaceWords (List * wordsFile, List * newWords);
 void fromListToFile (List * list, char * path);
+void printCloseList (char * file, char * dico);

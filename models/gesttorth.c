@@ -3,6 +3,14 @@
 #include <string.h>
 #include "../gestbib.h"
 #include "../gesttorth.h"
+
+/*
+*   Input : char * file- Path of the .txt file
+*           char * dico - Path of the dictionnary
+*   Return : -
+*   Purpose : This function will read the source file and then return a List of the words
+ that are not in the dictionary.
+*/
 List * getDifferentWords(char * file, char * dico)
 {
     List * fileWords = getWordsFromFile(file);
@@ -14,6 +22,47 @@ List * getDifferentWords(char * file, char * dico)
     return newList;
 
 }
+
+
+
+/*
+*   Input : char * file- Path of the .txt file
+*           char * dico - Path of the dictionnary
+*   Return : -
+*   Purpose : This function will read the source file and then return a List of the words
+ that are not in the dictionary with a list of words (inside the dictionary) that could be a good correction.
+*/
+void printCloseList (char * file, char * dico)
+{
+    List * test = getDifferentWords(file,dico);
+    List * dicoWords = getWordsFromFile(dico);
+
+    Element * actual = test->first;
+    while (actual->next != NULL)
+    {
+        printf("%s\n",actual->chaine);
+        List *e = researchWordList(dicoWords,actual->chaine,2);
+        int i = 0;
+        if (e->length > 0)
+        {
+            while (i < e->length)
+            {
+                printf("  Close word : %s\n",e->first->chaine);
+                e->first = e->first->next;
+                ++i;
+            }
+        }
+        else
+        {
+            printf("  No close word found\n");
+        }
+
+        actual = actual->next;
+    }
+}
+
+
+
 
 List * compareList(List * first, List * second)
 {
@@ -226,18 +275,6 @@ List * replaceWords (List * wordsFile, List * newWords)
     afficherListe(wordsFile);
 }
 
-//void fromListToFile (List * list, char * path)
-//{
-//    FILE file = NULL;
-//    file = fopen(path,"w");
-//    int lineNumber = 1;
-//    int count = 0;
-//    if (file)
-//    {
-//
-//        fclose(file);
-//    }
-//
-//}
+
 
 
