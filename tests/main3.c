@@ -7,7 +7,7 @@
 int main()
 {
 
-    printCloseList("thomas.txt","thomas.dico");
+    printCloseList ("thomas.txt", "thomas.dico");
 
 }
 
