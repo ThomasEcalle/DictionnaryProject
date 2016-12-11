@@ -4,7 +4,6 @@
 #include "../gestbib.h"
 #include "../gesttorth.h"
 
-
 int main()
 {
     List * test = getDifferentWords("thomas.txt","thomas.dico");

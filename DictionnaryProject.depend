@@ -193,7 +193,7 @@
 
 1481390900 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main2.c
 
-1481390900 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main3.c
+1481391826 source:c:\users\my-pc\documents\github\dictionnaryproject\tests\main3.c
 	<stdio.h>
 	<stdlib.h>
 	"../constantes.h"
@@ -226,7 +226,6 @@
 	"controller_active_dictionary.h"
 	"gestbib.h"
 
-1481391189 c:\users\my-pc\documents\github\dictionnaryproject\gestbib.h
 
 1480795624 c:\users\my-pc\documents\github\dictionnaryproject\models\dictionnary.h
 
