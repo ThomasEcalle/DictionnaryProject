@@ -62,16 +62,163 @@ void printCloseList (char * file, char * dico)
 }
 
 
-void putCorrectWordsInFIle (char * file, char * dico)
+void putCorrectWordsInFIle (char * filePath, char * dico)
 {
-//    List * differents = getDifferentWords(file,dico);
-//
-//    Element * actual = differents->first;
+    List * differents = getDifferentWords(filePath,dico);
+
+    ListOfChar * listOfChar = putInOrder(getListOfCharFromFile(filePath));
+
+    List * newone = putInOrderList(getNewWords(differents,dico));
+
+    //afficherListe(newone);
+
+    Charac * actual = listOfChar->first;
+    Element * correct = newone->first;
+    while (actual->next != NULL && correct->next != NULL)
+    {
+
+        if(correct->firstChar == actual->position
+           && correct->lineNumber == actual->line)
+        {
+            printf("okok : %c\n",actual->character);
+            int diff = fabs(differents->first->length - newone->first->length);
+            int i;
+            for (i = 0; i < newone->first->length; i++)
+            {
+                if (i >= newone->first->length - diff)
+                {
+                    Charac * e = malloc(sizeof(Charac));
+                    e->character = newone->first->chaine[i];
+                    e->line = newone->first->lineNumber;
+                    e->position = newone->first->firstChar;
+
+                    e->next = actual->next;
+                    actual->next = e;
+                    actual = actual->next;
+                }
+                else
+                {
+                    actual->character = newone->first->chaine[i];
+                    actual = actual->next;
+                }
+
+            }
+            continue;
+        }
+        correct = correct->next;
+        actual = actual->next;
+    }
+
+
+
+    Charac * a = listOfChar->first;
+    while (a->next != NULL)
+    {
+        printf("%c",a->character);
+        a = a->next;
+    }
 
 
 }
 
+List * getNewWords (List * list, char * dico)
+{
+    List * dicoWords = getWordsFromFile(dico);
+    Element * actual = list->first;
+    List * newone = initialisationList();
+    while (actual->next != NULL)
+    {
+        List * e = researchWordList(dicoWords,actual->chaine,2);
+        Element * tmp = malloc(sizeof(Element));
 
+        tmp->chaine = e->first->chaine;
+        tmp->firstChar = actual->firstChar;
+        tmp->lineNumber = actual->lineNumber;
+        tmp->length = actual->length;
+
+
+        tmp->next = newone->first;
+        newone->first = tmp;
+        actual = actual->next;
+    }
+    return newone;
+}
+
+ListOfChar * putInOrder (ListOfChar * list)
+{
+    Charac * actual = list->first;
+    ListOfChar * newone = initialisationListOfChar();
+    while (actual->next != NULL)
+    {
+        Charac * tmp = malloc(sizeof(Charac));
+        tmp->character = actual->character;
+        tmp->line = actual->line;
+        tmp->position = actual->position;
+
+        tmp->next = newone->first;;
+        newone->first = tmp;
+        actual = actual->next;
+    }
+
+    return newone;
+}
+
+List * putInOrderList(List * list)
+{
+    Element * actual = list->first;
+    List * newone = initialisationList();
+    while (actual->next != NULL)
+    {
+        Element * tmp = malloc(sizeof(Element));
+        tmp->chaine = actual->chaine;
+        tmp->lineNumber = actual->lineNumber;
+        tmp->firstChar = actual->firstChar;
+        tmp->length = actual->length;
+
+
+        tmp->next = newone->first;;
+        newone->first = tmp;
+        actual = actual->next;
+    }
+
+    return newone;
+}
+
+
+ListOfChar * getListOfCharFromFile (char * path)
+{
+     ListOfChar * list = initialisationListOfChar();
+    int line = 1;
+    int position = 0;
+
+    FILE * file = fopen(path,"r");
+    if (file != NULL)
+    {
+        char c = fgetc(file);
+        while (1)
+        {
+            Charac * charac = malloc(sizeof(Charac));
+
+            charac->character = c;
+            charac->line = line;
+            charac->position = position;
+            charac->next = list->first;
+
+            list->first = charac;
+
+            position++;
+            if (c == '\n')
+            {
+                line++;
+                position = 0;
+            }
+            if (c == EOF) break;
+            c = fgetc(file);
+        }
+        fclose(file);
+    }
+    return list;
+}
 
 List * compareList(List * first, List * second)
 {

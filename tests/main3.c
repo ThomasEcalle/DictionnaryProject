@@ -7,7 +7,7 @@
 int main()
 {
 
-    printCloseList ("thomas.txt", "thomas.dico");
+    putCorrectWordsInFIle("thomas.txt","thomas.dico");
 
 }
 

@@ -7,3 +7,7 @@ List * replaceWords (List * wordsFile, List * newWords);
 void fromListToFile (List * list, char * path);
 void printCloseList (char * file, char * dico);
 void putCorrectWordsInFIle (char * file, char * dico);
+ListOfChar * getListOfCharFromFile (char * path);
+ListOfChar * putInOrder (ListOfChar * list);
+List * getNewWords (List * list, char * dico);
+List * putInOrderList(List * list);
