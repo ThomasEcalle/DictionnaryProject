@@ -1,11 +1,9 @@
-voiture
-voile
+barbier
 guitare
-maison canape  mboutonrambo voila 
-
-mmytharda
-
-
-
-
-ppaignoiro
+maison
+moutharde
+paignoire
+rambo
+voila
+voile
+voiture

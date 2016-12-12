@@ -1,0 +1,4 @@
+voiture
+0;voile
+0;guitare
+0;maison 0;canape

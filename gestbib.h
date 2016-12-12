@@ -16,20 +16,6 @@ struct List
     Element *first;
 };
 
-typedef struct Charac Charac;
-struct Charac
-{
-    char character;
-    int line;
-    int position;
-    Charac * next;
-};
-
-typedef struct ListOfChar ListOfChar;
-struct ListOfChar
-{
-    Charac * first;
-};
 
 void createDictionary(char * path);
 void useDictionary();
@@ -50,5 +36,4 @@ void debugChar(char *msg, char *var);
 void debugInt(char *msg, int var);
 int compare(char *a, char *b);
 char *substr(char *src, int len);
-ListOfChar * initialisationListOfChar ();
 #endif

@@ -357,20 +357,6 @@ int removeElement(List * list, char * value)
 
 
 
-ListOfChar * initialisationListOfChar ()
-{
-    ListOfChar * list = malloc(sizeof(ListOfChar));
-
-    Charac * c = malloc(sizeof(Charac));
-
-    c->next = NULL;
-
-    list->first = c;
-
-    return list;
-}
-
-
 
 
 
