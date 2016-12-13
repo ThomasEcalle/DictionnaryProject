@@ -7,7 +7,7 @@
 #include "gestbib.h"
 
 
-
+/*
 int main()
 {
     printf("WELCOME IN THE DICTIONARIES ADMINISTRATOR\n"
@@ -25,3 +25,4 @@ int main()
     }
     return 0;
 }
+*/

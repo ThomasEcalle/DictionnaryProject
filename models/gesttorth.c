@@ -61,22 +61,25 @@ void printCloseList (char * file, char * dico)
     }
 }
 
-
+/*
+*   Input : char * filePath - Path of the .txt file
+*           char * dico - Path of the dictionnary
+*   Return : -
+*   Purpose : This function will get the differences between both files and find out the possible corrections
+                to the words that are not in dictionary's file
+            then, it will replace all the words which have good corrections by the new words and print it
+*/
 void putCorrectWordsInFIle (char * filePath, char * dico)
 {
     List * differents = getDifferentWords(filePath,dico);
-
-//    ListOfChar * listOfChar = putInOrder(getListOfCharFromFile(filePath));
 
     List * newone = putInOrderList(getNewWords(differents,dico));
 
     List * test = putInOrderList(getEverythingFromFile(filePath));
 
 
-
-
     FILE * file = NULL;
-    file = fopen("testtest.txt","w");
+    file = fopen(filePath,"w");
 
     if(file != NULL)
     {
@@ -89,14 +92,18 @@ void putCorrectWordsInFIle (char * filePath, char * dico)
             {
               if (e->chaine != NULL)
               {
-                  actual->chaine = e->chaine;
+                  strcpy(actual->chaine,e->chaine);actual->chaine = e->chaine;
               }
               e = e->next;
             }
-    //        newone->first = newone->first->next;
             fprintf(file, "%s", actual->chaine);
             actual = actual->next;
         }
+         while (actual->next != NULL)
+         {
+            fprintf(file, "%s", actual->chaine);
+            actual = actual->next;
+         }
         fclose(file);
     }
 
@@ -159,7 +166,7 @@ List * getEverythingFromFile(char * path)
                     count = 0;
                     lastWasALetter = 0;
                 }
-                char * test = malloc(sizeof(char));
+                char * test = calloc(2,sizeof(char));
                 test[0] = c;
                 if (c != EOF) insertion(elementsList,test,0,0);
             }
