@@ -4,13 +4,14 @@
 #include "../gestbib.h"
 #include "../gesttorth.h"
 
+/*
 int main()
 {
 
     putCorrectWordsInFIle("thomas.txt","thomas.dico");
 
 }
-
+*/
 
 
 

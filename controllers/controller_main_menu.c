@@ -73,7 +73,7 @@ void createDictionaryChoice(int* isAFileSelected, char* path){
     if(strcmp(path, "e") != 0){
         *isAFileSelected = 1;
         clearConsole();
-        fp = fopen("C:\\Users\\jpougetoux\\Pictures\\essai.png", "r");
+        fp = fopen(path, "r");
         if(fp != NULL){
             printf("\nYour dictionary has been created !\n\n");
         }

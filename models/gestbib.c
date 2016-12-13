@@ -55,7 +55,6 @@ void generateDictionary(char * formatText, char * dictionaryName){
 }
 
 void destroyDictionary(char * path){
-    fclose(path);
     remove(path);
 }
 
@@ -67,10 +66,10 @@ void insertWord(char * path, char * word){
     fromListToDico(list,path);
 }
 
-void researchWordInFIle(char * path, char * word, int filter)
+char* researchWordInFIle(char * path, char * word, int filter)
 {
     List * list = getWordsFromFile(path);
-    researchWord(list,word,filter);
+    return researchWord(list,word,filter);
 }
 
 

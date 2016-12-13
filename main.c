@@ -8,7 +8,7 @@
 
 
 
-/*int main()
+int main()
 {
     printf("WELCOME IN THE DICTIONARIES ADMINISTRATOR\n"
            "-----------------------------------------\n");
@@ -24,4 +24,4 @@
         }
     }
     return 0;
-}*/
+}

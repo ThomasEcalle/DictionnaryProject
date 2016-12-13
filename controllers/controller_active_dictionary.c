@@ -43,7 +43,7 @@ void initActiveDico(int* isAFileSelected, char* path){
 }
 
 void listWordChoice(char* path){
-    afficherListe(getWordsFromFile(path));
+    printWordsList((path), 1);
 }
 
 void insertWordChoice(int* isAFileSelected, char* path){
@@ -73,5 +73,7 @@ void researchWordChoice(char* path){
     int threshold;
     printf("Please choose the threshold of your research.\nThreshold : ");
     scanf("%d", threshold);
-    researchWordInFIle(path, word, threshold);
+    char* closeWord = researchWordInFIle(path, word, threshold);
+    printf("The closest word is : %s", closeWord);
+
 }
