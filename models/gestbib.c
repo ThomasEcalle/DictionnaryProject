@@ -350,8 +350,24 @@ int removeElement(List * list, char * value)
    }
 }
 
-
-
+/*
+*   Input : char * sentence - Word to test
+*   Return : -
+*   Purpose : This function return 0 if it is not a word , else 1
+*/
+int isWord (char * sentence)
+{
+    int size = strlen(sentence);
+    int i;
+    for (i = 0; i < size; i++)
+    {
+        if ((sentence[i] < 65 || sentence[i] > 90)  || (sentence[i] < 97 || sentence[i] > 122))
+        {
+            return 0;
+        }
+    }
+    return 1;
+}
 
 
 

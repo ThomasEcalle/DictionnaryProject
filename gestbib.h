@@ -36,4 +36,5 @@ void debugChar(char *msg, char *var);
 void debugInt(char *msg, int var);
 int compare(char *a, char *b);
 char *substr(char *src, int len);
+int isWord (char * sentence);
 #endif
