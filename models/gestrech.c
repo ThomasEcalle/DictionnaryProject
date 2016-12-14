@@ -20,7 +20,6 @@ List *researchWordList(List *list, char *word, int filter)
             if (diff <= filter)
             {
 
-                    filter = diff;
                     closest->chaine = Element->chaine;
                     head->length += 1;
                     if (i < list->length -1)

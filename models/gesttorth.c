@@ -40,7 +40,7 @@ void printCloseList (char * file, char * dico)
     Element * actual = test->first;
     while (actual->next != NULL)
     {
-        printf("%s\n",actual->chaine);
+        printf("%s (line %d)\n",actual->chaine,actual->lineNumber);
         List *e = researchWordList(dicoWords,actual->chaine,2);
         int i = 0;
         if (e->length > 0)

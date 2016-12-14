@@ -29,10 +29,13 @@
 //    dico->first->next->next->next->next->chaine = "di";
 //    dico->first->next->next->next->next->length = strlen("di");
 //    dico->length = 5;
-//    Element *list = researchWordList(dico, "da", 5);
-//    while (list != NULL)
+//    List *list = researchWordList(dico, "da", 3);
+//    Element *elem = list->first;
+//    int i = 0;
+//    while (i < list->length)
 //    {
-//        debugChar("mot",list->chaine);
-//        list = list->next;
+//        debugChar("",elem->chaine);
+//        elem = elem->next;
+//        ++i;
 //    }
 //}
