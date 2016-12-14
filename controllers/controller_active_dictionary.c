@@ -16,9 +16,9 @@ void initActiveDico(int* isAFileSelected, char* path){
     int userChoice;
     char *choicesArray[] = {"List the words of the dictionary",
                             "Insert a word in the dictionary",
-                            "Search if a word is in the dictionary",
+                            "Search if a word is in the dictionary"/*,
                             "Get the list of the closest words in the dictionary of a word",
-                            "Correct a file using words in the dictionary",
+                            "Correct a file using words in the dictionary",*/
                             "Return to the main menu"
                             };
     printMenu (choicesArray, &userChoice, 6);
