@@ -135,11 +135,13 @@ char *researchWord(List *List, char *word, int filter)
     List * elements = getWordsFromFile(source);
 
      fromListToDico(elements,destination);
+     free(elements);
  }
 
 
 
- /*
+
+/*
 *   Input : List * elements - Linked list
 *           char * destination - Path of the future dictionary
 *   Return : -
@@ -155,11 +157,11 @@ void fromListToDico (List * elements, char * destination)
 
      if (file != NULL)
      {
-        while (count < size)
+        afficherListe(elements);
+        while (count < size + 1)
          {
 
-            char * min = calloc(100,sizeof(char));
-            min = "zz";
+            char * min = "zz";
 
             Element * actuel = elements->first;
 
@@ -177,12 +179,15 @@ void fromListToDico (List * elements, char * destination)
             {
                 fprintf(file, "%s\n", min);
             }
+
             while (removeElement(elements, min) == 1)
             {
-                removeElement(elements, min);
+                //removeElement(elements, min);
             }
             count++;
+            free(min);
          }
+         fclose(file);
 
      }
      else
@@ -190,7 +195,7 @@ void fromListToDico (List * elements, char * destination)
          printf("ouverture fichier impossible");
      }
 
-     fclose(file);
+
 
  }
 
@@ -266,6 +271,7 @@ List * getWordsFromFile(char * path)
         }
         fclose(file);
         return elementsList;
+        free(elementsList);
 
     }
 }

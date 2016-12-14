@@ -23,7 +23,11 @@ int main()
             initMainMenu(&isAFileSelected, path);
         }
     }
+
+
     return 0;
 }
+
+
 
 
