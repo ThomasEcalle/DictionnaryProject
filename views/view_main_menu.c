@@ -199,7 +199,9 @@ void printWarning(char * warning)
 void printWordsList (List * listToPrint, int interval)
 {
     char * warning = "You have seen all the words";
+    //printf("  leeeeen = %d\n",listToPrint->length);
     List * list = putListInOrder(listToPrint);
+
     int i;
     int check = 0;
     int actual = 0;
@@ -239,13 +241,20 @@ void printWordsList (List * listToPrint, int interval)
     }
     else
     {
+
+
         i = 0;
        Element * word = list->first;
-       while (word->next != NULL)
+       for (; i < list->length ; word = word->next)
        {
-           printf("%d)%s\n",i+1,word->chaine);
+           if (i >= list->length)
+           {
+               printf("%s",warning);
+           }
+           else{
+                printf("%d)%s\n",i+1,word->chaine);
+           }
            i++;
-           word = word->next;
        }
     }
 }
@@ -253,12 +262,14 @@ void printWordsList (List * listToPrint, int interval)
 
 List * putListInOrder (List * list)
 {
+    int i = 0;
     List * newone = initialisationList();
     Element * actual = list->first;
-    while (actual->next != NULL)
+    while (i < list->length)
     {
         insertion(newone,actual->chaine,0,0);
         actual = actual->next;
+        ++i;
     }
     return newone;
 }

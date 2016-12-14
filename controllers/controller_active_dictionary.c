@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "../gestbib.h"
 #include "../constantes.h"
 #include "../view_main_menu.h"
 
@@ -15,8 +16,8 @@ void initActiveDico(int* isAFileSelected, char* path){
     char *choicesArray[] = {"List the words of the dictionary",
                             "Insert a word in the dictionary",
                             "Search if a word is in the dictionary",
-                            "Search the more close word in the dictionary of a word",
                             "Get the list of the closest words in the dictionary of a word",
+                            "Correct a file using words in the dictionary",
                             "Return to the main menu"
                             };
     printMenu (choicesArray, &userChoice, 6);
@@ -31,8 +32,10 @@ void initActiveDico(int* isAFileSelected, char* path){
             researchWordChoice(path);
             break;
         case 4:
+            researchClosestWordsChoice(path);
             break;
         case 5:
+            correctFile(path);
             break;
         case 6:
             free(path);
@@ -94,7 +97,7 @@ void researchWordChoice(char* path){
     }
 }
 
-void researchCloseWordChoice(char* path){
+void researchClosestWordsChoice(char* path){
     char* word = malloc(sizeof(char) * 255);
     printf("Please type the word you want to search (e to exit).\nYour word : ");
     scanf("%s", word);
@@ -105,39 +108,41 @@ void researchCloseWordChoice(char* path){
     char* ptr;
     long realThreshold;
     do{
-        printf("Please choose the number of the threshold (number of letters differents) of your research.\nThreshold : ");
+        printf("\nPlease choose the number of the threshold (number of letters differents) of your research.\nThreshold : ");
         scanf("%s", threshold);
         realThreshold = strtol(threshold, &ptr, 10);
     }while(realThreshold == NULL && strlen(ptr) > 0);
-    char* closeWord = researchWordInFIle(path, word, realThreshold);
-    if(strlen(closeWord) == 0){
-        printf("There is no result for this word and threshold in the dictionary. Maybe try with another !\n");
+
+    List* list = researchWordList(getWordsFromFile(path), word, realThreshold);
+    if(list->length == 0){
+        printf("\nNo word match.\n");
     }
     else{
-        printf("The word has been find in the file with the threshold ! Result : %s\n", closeWord);
+        printf("\nThere is %d which match your word : \n", list->length);
+        printWordsList(list, 20);
     }
 }
 
-void researchClosestWordChoice(char* path){
-    char* word = malloc(sizeof(char) * 255);
-    printf("Please type the word you want to search (e to exit).\nYour word : ");
-    scanf("%s", word);
-    if(strcmp(word, "e") == 0){
+void correctFile(char* path){
+    printf("Please select the file you want to correct using this dictionary (e to exit).\nYour path : ");
+    char* file = malloc(sizeof(char) * 255);
+    scanf("%s", file);
+    FILE* fp = fopen(file, "r");
+
+    while(strcmp(file, "e") != 0 && fp == NULL){ // Verifie que le fichier n'existe pas)
+        fclose(fp);
+        free(file);
+        file = malloc(sizeof(char) * 255);
+        printErrorMessage ("The file doesn't exist.\nPlease select another path (e to exit).");
+        printf("\nYour new path : ");
+        scanf("%s", file);
+        fp = fopen(file, "r");
+    }
+    fclose(fp);
+    if(strcmp(file, "e") == 0){
         return 0;
     }
-    char* threshold = malloc(sizeof(char) * 255);
-    char* ptr;
-    long realThreshold;
-    do{
-        printf("Please choose the number of the threshold (number of letters differents) of your research.\nThreshold : ");
-        scanf("%s", threshold);
-        realThreshold = strtol(threshold, &ptr, 10);
-    }while(realThreshold == NULL && strlen(ptr) > 0);
-    char* closeWord = researchWordInFIle(path, word, realThreshold);
-    if(strlen(closeWord) == 0){
-        printf("There is no result for this word and threshold in the dictionary. Maybe try with another !\n");
-    }
-    else{
-        printf("The word has been find in the file with the threshold ! Result : %s\n", closeWord);
-    }
+    clearConsole();
+    printf("\nThe words which has not been find in the dictionary are : \n");
+    printCloseList(file, path);
 }
