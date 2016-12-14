@@ -195,6 +195,8 @@ List * getNewWords (List * list, char * dico)
         List * e = researchWordList(dicoWords,actual->chaine,2);
         Element * tmp = malloc(sizeof(Element));
 
+//        printf("%s",e->first->chaine);
+
         tmp->chaine = e->first->chaine;
         tmp->firstChar = actual->firstChar;
         tmp->lineNumber = actual->lineNumber;
