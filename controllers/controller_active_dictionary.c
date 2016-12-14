@@ -148,27 +148,38 @@ void correctFile(char* path){
 
     printDifferentsWords(file, path);
 
-    printf("\nDo you want to see the correction of unknown words ? (y or n)\n");
+    printf("\nDo you want to see the correction of unknown words ? (y or n)\nYour answer : ");
 
     char* answer = askForYorN();
+    if(answer == 1){
+        printCloseList(file, path);
+    }
 
     printf("\nDo you want to correct the file with the words of the dictionary ? (every unknown word will be replaced if a word "
-           "with a threshold of 2 is find in the dictionary)\n");
+           "with a threshold of 2 is find in the dictionary)\nYour answer : ");
+    answer = askForYorN();
+    clearConsole();
+    if(answer == 1){
+        putCorrectWordsInFIle(file, path);
+        printf("\nThe file has been corrected !\n");
+    }
 }
 
 int askForYorN(){
     char* answer = malloc(sizeof(char) * 255);
     scanf("%s", answer);
     while(strcmp(answer, "n") != 0 && strcmp(answer, "y") != 0){
-        printf("\nPlease answer with y or n.\n");
+        printf("\nPlease answer with y or n.\nYour answer : ");
         free(answer);
         char* answer = malloc(sizeof(char) * 255);
         scanf("%s", answer);
     }
     if(strcmp(answer, "n") == 0){
+        free(answer);
         return 0;
     }
     else if(strcmp(answer, "y") == 0){
+        free(answer);
         return 1;
     }
 }
