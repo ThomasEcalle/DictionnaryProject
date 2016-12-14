@@ -23,6 +23,17 @@ List * getDifferentWords(char * file, char * dico)
 
 }
 
+void printDifferentsWords (char * file, char * dico)
+{
+    List * list = getDifferentWords(file,dico);
+    Element * actual = list->first;
+    while (actual->next != NULL)
+    {
+        printf("%s (line %d)\n",actual->chaine,actual->lineNumber);
+        actual = actual->next;
+    }
+
+}
 
 
 /*
