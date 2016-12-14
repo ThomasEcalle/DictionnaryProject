@@ -44,7 +44,8 @@ int pointstar(char *pattern, char *word)
         }*/
       //  printf("PAT: %c\n", pattern[1]);
       //  printf("MOT: %c\n", word[strlen(word) - 1]);
-      for (int i = 0; i < strlen(word); ++i)
+      int i = 0;
+      for (; i < strlen(word); ++i)
       {
         int check = 0;
         while (pattern[1] == word[i] && i < strlen(word))
