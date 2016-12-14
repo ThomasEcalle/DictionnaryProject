@@ -43,7 +43,7 @@ void initActiveDico(int* isAFileSelected, char* path){
 }
 
 void listWordChoice(char* path){
-    printWordsList((path), 1);
+    printWordsList(getWordsFromFile(path), 20);
 }
 
 void insertWordChoice(int* isAFileSelected, char* path){
@@ -53,7 +53,7 @@ void insertWordChoice(int* isAFileSelected, char* path){
         scanf("%s", word);
         if(strcmp(word, "e") == 0){
             clearConsole();
-            free(word);
+            word = "";
             break;
         }
     }while(strcmp(word, "") == 0);
@@ -61,6 +61,7 @@ void insertWordChoice(int* isAFileSelected, char* path){
         insertWord(path, word);
         printf("\nYour word has been added to the dictionary !\n");
     }
+    free(word);
 }
 
 void researchWordChoice(char* path){
@@ -70,10 +71,19 @@ void researchWordChoice(char* path){
     if(strcmp(word, "e") == 0){
         return 0;
     }
-    int threshold;
-    printf("Please choose the threshold of your research.\nThreshold : ");
-    scanf("%d", threshold);
-    char* closeWord = researchWordInFIle(path, word, threshold);
-    printf("The closest word is : %s", closeWord);
-
+    char* threshold = malloc(sizeof(char) * 255);
+    char* ptr;
+    long realThreshold;
+    do{
+        printf("Please choose the number of the threshold (number of letters differents) of your research.\nThreshold : ");
+        scanf("%s", threshold);
+        realThreshold = strtol(threshold, &ptr, 10);
+    }while(realThreshold == NULL && strlen(ptr) > 0);
+    char* closeWord = researchWordInFIle(path, word, realThreshold);
+    if(strlen(closeWord) == 0){
+        printf("There is no result for this word and threshold in the dictionary. Maybe try with another !\n");
+    }
+    else{
+        printf("The word has been find in the file with the threshold ! Result : %s\n", closeWord);
+    }
 }

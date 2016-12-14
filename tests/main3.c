@@ -4,7 +4,7 @@
 #include "../gestbib.h"
 #include "../gesttorth.h"
 
-
+/*
 int main()
 {
     //putCorrectWordsInFIle("bigtext.txt","bigtext.dico");
@@ -12,7 +12,6 @@ int main()
    researchWordInFIle("bigtext.dico","poulet",0);
 
 }
-
-
+*/
 
 

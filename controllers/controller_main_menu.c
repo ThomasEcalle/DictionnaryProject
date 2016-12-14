@@ -201,6 +201,7 @@ void destroyDictionaryChoice(int* isAFileSelected, char* path){
 *   a l'utilisateur un nouveau chemin jusqu'a ce que ce soit le cas.
 */
 void checkNotNullAndFormatted(char* path){
+
     /*do{
         getSelectedPath(path);
         while(fopen(*path, "r") == NULL){ // Verifie que le fichier existe bien
