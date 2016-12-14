@@ -15,7 +15,7 @@ int main()
     int isAFileSelected = 0;
     char* path = malloc(sizeof(char) * 255);
     while(1 == 1){
-        printf("What do you want to do ?\n");
+        printf("\nWhat do you want to do ?\n");
         if(isAFileSelected){
             initActiveDico(&isAFileSelected, path);
         }

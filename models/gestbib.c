@@ -361,7 +361,7 @@ int isWord (char * sentence)
     int i;
     for (i = 0; i < size; i++)
     {
-        if ((sentence[i] < 65 || sentence[i] > 90)  || (sentence[i] < 97 || sentence[i] > 122))
+        if ((sentence[i] < 65 || sentence[i] > 90)  && (sentence[i] < 97 || sentence[i] > 122))
         {
             return 0;
         }
