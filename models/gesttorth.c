@@ -96,6 +96,7 @@ void putCorrectWordsInFIle (char * filePath, char * dico)
               }
               e = e->next;
             }
+
             fprintf(file, "%s", actual->chaine);
             actual = actual->next;
         }
@@ -158,10 +159,8 @@ List * getEverythingFromFile(char * path)
 
                         tmp = fgetc(file);
                     }
-                    if (strlen(string) >= 2 || string[0] == 'a')
-                    {
-                        insertion(elementsList,string,line,firstChar);
-                    }
+                    insertion(elementsList,string,line,firstChar);
+
 
                     count = 0;
                     lastWasALetter = 0;

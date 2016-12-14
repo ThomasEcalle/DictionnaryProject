@@ -8,8 +8,8 @@
 int main()
 {
 
-    putCorrectWordsInFIle("thomas.txt","thomas.dico");
-
+    putCorrectWordsInFIle("bigtext.txt","bigtext.dico");
+    //insertWord("bigtext.dico","village");
 }
 
 
