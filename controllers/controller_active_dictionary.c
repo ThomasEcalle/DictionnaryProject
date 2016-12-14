@@ -118,7 +118,7 @@ void researchClosestWordsChoice(char* path){
         printf("\nNo word match.\n");
     }
     else{
-        printf("\nThere is %d which match your word : \n", list->length);
+        printf("\nThere is %d which match your word with this threshold: \n", list->length);
         printWordsList(list, 20);
     }
 }
@@ -145,4 +145,8 @@ void correctFile(char* path){
     clearConsole();
     printf("\nThe words which has not been find in the dictionary are : \n");
     printCloseList(file, path);
+    printf("\nDo you want to correct the file ?");
+    /*do{
+        char* answer = malloc(sizeof(char) * 255);
+    }while(strcmp(answer, "oui"));*/
 }
