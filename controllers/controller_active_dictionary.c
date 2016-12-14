@@ -144,9 +144,28 @@ void correctFile(char* path){
     }
     clearConsole();
     printf("\nThe words which has not been find in the dictionary are : \n");
-    printCloseList(file, path);
-    printf("\nDo you want to correct the file ?");
-    /*do{
+
+
+
+    printf("\nDo you want to see the correction of unknown words ?\n");
+
+    printf("\nDo you want to correct the file with the words of the dictionary ? (every unknown word will be replaced if a word " +
+           "with a threshold of 2 is find in the dictionary)\n")
+}
+
+int askForYorN(){
+    char* answer = malloc(sizeof(char) * 255);
+    scanf("%s", answer);
+    while(strcmp(answer, "n") != 0 && strcmp(answer, "y") != 0){
+        printf("\nPlease answer with y or n.\n");
+        free(answer);
         char* answer = malloc(sizeof(char) * 255);
-    }while(strcmp(answer, "oui"));*/
+        scanf("%s", answer);
+    }
+    if(strcmp(answer, "n") == 0){
+        return 0;
+    }
+    else if(strcmp(answer, "y") == 0){
+        return 1;
+    }
 }
