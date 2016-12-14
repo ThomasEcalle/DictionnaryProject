@@ -2,9 +2,27 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="main.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="tests\main3.c" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="671" topLine="0" />
+			<Cursor1 position="293" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="models\gesttorth.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5875" topLine="45" />
+		</Cursor>
+		<Folding>
+			<Collapse line="14" />
+			<Collapse line="35" />
+			<Collapse line="72" />
+			<Collapse line="115" />
+			<Collapse line="215" />
+			<Collapse line="237" />
+		</Folding>
+	</File>
+	<File name="tests\main1.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1293" topLine="23" />
 		</Cursor>
 	</File>
 	<File name="tests\main2.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -12,14 +30,9 @@
 			<Cursor1 position="0" topLine="23" />
 		</Cursor>
 	</File>
-	<File name="models\gestrech.c" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="view_main_menu.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="130" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="gesttorth.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="413" topLine="0" />
+			<Cursor1 position="392" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="gestbib.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -27,19 +40,38 @@
 			<Cursor1 position="1035" topLine="14" />
 		</Cursor>
 	</File>
-	<File name="tests\main1.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="gesttorth.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1293" topLine="23" />
+			<Cursor1 position="413" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="view_main_menu.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="models\gestbib.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="392" topLine="0" />
+			<Cursor1 position="1531" topLine="75" />
+		</Cursor>
+		<Folding>
+			<Collapse line="80" />
+		</Folding>
+	</File>
+	<File name="models\gestrech.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="130" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="views\view_main_menu.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="views\view_main_menu.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="5573" topLine="192" />
+			<Cursor1 position="7086" topLine="155" />
+		</Cursor>
+		<Folding>
+			<Collapse line="152" />
+			<Collapse line="200" />
+			<Collapse line="255" />
+			<Collapse line="267" />
+		</Folding>
+	</File>
+	<File name="main.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="671" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="constantes.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -47,28 +79,9 @@
 			<Cursor1 position="227" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="models\gesttorth.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3178" topLine="22" />
-		</Cursor>
-		<Folding>
-			<Collapse line="14" />
-			<Collapse line="35" />
-		</Folding>
-	</File>
-	<File name="tests\main3.c" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="207" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="controllers\controller_main_menu.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="3819" topLine="79" />
-		</Cursor>
-	</File>
-	<File name="models\gestbib.c" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1531" topLine="54" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

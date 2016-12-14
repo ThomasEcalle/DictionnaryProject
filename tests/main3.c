@@ -7,9 +7,10 @@
 
 int main()
 {
-
-    putCorrectWordsInFIle("bigtext.txt","bigtext.dico");
+    //putCorrectWordsInFIle("bigtext.txt","bigtext.dico");
     //insertWord("bigtext.dico","village");
+   researchWordInFIle("bigtext.dico","poulet",0);
+
 }
 
 
