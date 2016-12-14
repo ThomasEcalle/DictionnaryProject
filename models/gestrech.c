@@ -6,7 +6,6 @@
 
 List *researchWordList(List *list, char *word, int filter)
 {
-  //  debugInt("len", list->length);
     Element *closest = malloc(sizeof (Element));
     List *head = malloc(sizeof (List));
     head->first = closest;
@@ -17,15 +16,11 @@ List *researchWordList(List *list, char *word, int filter)
     Element = list->first;
     for (i = 0; i < list->length; Element = Element->next)
     {
- //debugChar("", "AVANT diff");
             int diff = compare(Element->chaine,word);
-
-     //   debugChar("", "apres diff");
             if (diff <= filter)
             {
 
                     filter = diff;
-               //     debugChar("mot qui entre dans la liste: ",Element->chaine );
                     closest->chaine = Element->chaine;
                     head->length += 1;
                     if (i < list->length -1)
@@ -39,8 +34,6 @@ List *researchWordList(List *list, char *word, int filter)
                     }
 
             }
-
-//        debugChar("CLOSEST :", closest);
         ++i;
     }
 

@@ -86,22 +86,12 @@ char *researchWord(List *List, char *word, int filter)
     Element = List->first;
     for (i = 0; i < List->length; Element = Element->next)
     {
-//        debugChar("Element", Element->chaine);
         if (len > Element->length)
         {
             ++i;
             continue;
         }
-
-       // char *tmp = substr(Element->chaine, len);
-
-//        debugChar("word", word);
-//        debugChar("TMP", tmp);
-
-//            debugChar("Research word : on entre dans debut commun", Element->chaine);
             int diff = compare(Element->chaine,word);
-//            debugChar(word, Element->chaine);
-//            debugInt("DIFF : ", diff);
             if (diff == 0)
             {
                 return Element->chaine;
@@ -115,8 +105,6 @@ char *researchWord(List *List, char *word, int filter)
                 }
 
             }
-
-//        debugChar("CLOSEST :", closest);
         ++i;
     }
     return closest;
