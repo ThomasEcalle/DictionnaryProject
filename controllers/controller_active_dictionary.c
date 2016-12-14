@@ -53,7 +53,7 @@ void insertWordChoice(int* isAFileSelected, char* path){
         scanf("%s", word);
         if(strcmp(word, "e") == 0){
             clearConsole();
-            free(word);
+            word = "";
             break;
         }
     }while(strcmp(word, "") == 0);
@@ -61,6 +61,7 @@ void insertWordChoice(int* isAFileSelected, char* path){
         insertWord(path, word);
         printf("\nYour word has been added to the dictionary !\n");
     }
+    free(word);
 }
 
 void researchWordChoice(char* path){
