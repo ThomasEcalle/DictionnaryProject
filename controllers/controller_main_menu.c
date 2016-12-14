@@ -95,13 +95,14 @@ void createDictionaryChoice(int* isAFileSelected, char* path){
 void useExistantDictionaryChoice(int* isAFileSelected, char* path){
     printf("Please select the path of the dictionary (e to exit).\nYour path : ");
     scanf("%s", path);
-    checkIfDico(path);
     FILE* fp = fopen(path, "r");
-    while(strcmp(path, "e") != 0 && fp == NULL){ // Verifie que le fichier n'existe pas)
+
+    while(strcmp(path, "e") != 0 && (checkIfDico(path) != 1 || fp == NULL)){ // Verifie que le fichier n'existe pas)
+        //clearConsole();
         fclose(fp);
         free(path);
         path = malloc(sizeof(char) * 255);
-        printErrorMessage ("The file doesn't exist.\nPlease select another path (e to exit).");
+        printErrorMessage ("The file doesn't exist or isn't a valid dictionary.\nPlease select another path (e to exit).");
         printf("\nYour new path : ");
         scanf("%s", path);
         fp = fopen(path, "r");
@@ -197,17 +198,16 @@ void destroyDictionaryChoice(int* isAFileSelected, char* path){
 
 int checkIfDico(char* path){
     if(strlen(path) < 5){
-        printf("The path don't end by '.dico'.");
         return 0;
     }
     else{
-        char* end = malloc(sizeof(char) * 6);
-        int i = 0;
+        char end[] = ".dico";
+        int i = 1;
         for(; i < 5; i++){
-            end[strlen(path) - 1 - i] = path[i];
+            if(end[strlen(end) - i] != path[strlen(path) - i]){
+               return 0;
+            }
         }
-        end[5] = '\0';
-        printf("%s", end);
-        return 1;
     }
+    return 1;
 }
