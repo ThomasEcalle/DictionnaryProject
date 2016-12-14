@@ -103,9 +103,8 @@ void askForNumber (int * numberAsked, char * question, int min, int max)
 *   Purpose : this function can display any menu we want to show to the user
             the function add a LAST choice (size + 1) that represents the willing of quitting the menu (EXIT)
 */
-void printMenu (char ** stringArray,int * userChoice)
+void printMenu (char ** stringArray,int * userChoice,int size)
 {
-    int size = sizeof(stringArray);
     int i;
     int check = 0;
     while (!check){

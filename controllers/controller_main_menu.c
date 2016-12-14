@@ -20,7 +20,7 @@ void initMainMenu(int* isAFileSelected, char* path){
                             "Use an existing dictionary",
                             "Make a dictionary from a text file",
                             "Destroy a dictionary"};
-    printMenu (choicesArray, &userChoice);
+    printMenu (choicesArray, &userChoice, 4);
     switch(userChoice){
         case 1:
             createDictionaryChoice(isAFileSelected, path);
@@ -57,11 +57,16 @@ void createDictionaryChoice(int* isAFileSelected, char* path){
     printf("Please select a path for the dictionary (e to exit).\nYour path : ");
     scanf("%s", path);
     FILE* fp = fopen(path, "r");
-    while(strcmp(path, "e") != 0 && fp != NULL){ // Verifie que le fichier n'existe pas
+    while(strcmp(path, "e") != 0 && (fp != NULL || checkIfDico(path) != 1)){ // Verifie que le fichier n'existe pas
+        if(checkIfDico(path) != 1){
+            printErrorMessage ("This path does not end by '.dico'\nPlease select another path (e to exit).");
+        }
+        else{
+            printErrorMessage ("This path already contain a file.\nPlease select another path (e to exit).");
+        }
         fclose(fp);
         free(path);
         path = malloc(sizeof(char) * 255);
-        printErrorMessage ("This path already contain a file.\nPlease select another path (e to exit).");
         printf("\nYour new path : ");
         scanf("%s", path);
         fp = fopen(path, "r");
@@ -96,11 +101,12 @@ void useExistantDictionaryChoice(int* isAFileSelected, char* path){
     printf("Please select the path of the dictionary (e to exit).\nYour path : ");
     scanf("%s", path);
     FILE* fp = fopen(path, "r");
-    while(strcmp(path, "e") != 0 && fp == NULL){ // Verifie que le fichier n'existe pas)
+
+    while(strcmp(path, "e") != 0 && (checkIfDico(path) != 1 || fp == NULL)){ // Verifie que le fichier n'existe pas)
         fclose(fp);
         free(path);
         path = malloc(sizeof(char) * 255);
-        printErrorMessage ("The file doesn't exist.\nPlease select another path (e to exit).");
+        printErrorMessage ("The file doesn't exist or isn't a valid dictionary.\nPlease select another path (e to exit).");
         printf("\nYour new path : ");
         scanf("%s", path);
         fp = fopen(path, "r");
@@ -133,11 +139,16 @@ void convertFileIntoDictionaryChoice(int* isAFileSelected, char* path){
     printf("Please select the path of the file to create (e to exit).\nYour path : ");
     scanf("%s", path);
     fp = fopen(path, "r");
-    while(strcmp(path, "e") != 0 && fopen(path, "r") != NULL){ // Verifie que le fichier n'existe pas
+    while(strcmp(path, "e") != 0 && (fp != NULL || checkIfDico(path) != 1)){ // Verifie que le fichier n'existe pas
+        if(checkIfDico(path) != 1){
+            printErrorMessage ("This path does not end by '.dico'\nPlease select another path (e to exit).");
+        }
+        else{
+            printErrorMessage ("This path already contain a file.\nPlease select another path (e to exit).");
+        }
         free(path);
         fclose(fp);
         path = malloc(sizeof(char) * 255);
-        printErrorMessage ("There is already a file at the path.\nPlease select another path (e to exit).");
         printf("\nYour new path : ");
         scanf("%s", path);
         fp = fopen(path, "r");
@@ -193,23 +204,19 @@ void destroyDictionaryChoice(int* isAFileSelected, char* path){
     }
 }
 
-/*
-*   Input : *path - chemin du fichier qui sera choisi
-*   Return : -
-*   Purpose : Permet de verifier que le fichier au chemin indique existe
-*   bien et qu'il est formatte comme un dictionnaire, sinon redemande
-*   a l'utilisateur un nouveau chemin jusqu'a ce que ce soit le cas.
-*/
-void checkNotNullAndFormatted(char* path){
 
-    /*do{
-        getSelectedPath(path);
-        while(fopen(*path, "r") == NULL){ // Verifie que le fichier existe bien
-            messageUser("There is no file at this path.");
-            getSelectedPath(path);
+int checkIfDico(char* path){
+    if(strlen(path) < 5){
+        return 0;
+    }
+    else{
+        char end[] = ".dico";
+        int i = 1;
+        for(; i < 5; i++){
+            if(end[strlen(end) - i] != path[strlen(path) - i]){
+               return 0;
+            }
         }
-        if(!dicoFormatted(path)){ /// !----- fonction du model ou controller vérifiant le bon formattage du fichier dictionnaire
-            messageUser("The dictionary is not formatted.");
-        }
-    }while(!dicoFormatted(path));*/
+    }
+    return 1;
 }
