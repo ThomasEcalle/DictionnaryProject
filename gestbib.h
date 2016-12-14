@@ -3,7 +3,7 @@
 typedef struct Element Element;
 struct Element
 {
-    char * chaine;
+    char *chaine;
     Element *next;
     int length;
     int lineNumber;
