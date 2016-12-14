@@ -10,3 +10,4 @@ void putCorrectWordsInFIle (char * file, char * dico);
 List * getNewWords (List * list, char * dico);
 List * putInOrderList(List * list);
 List * getEverythingFromFile(char * path);
+void printDifferentsWords (char * file, char * dico);
