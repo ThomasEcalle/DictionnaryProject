@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../gestbib.h"
+#include "../gesttorth.h"
 #include "../constantes.h"
 #include "../view_main_menu.h"
 
@@ -145,12 +146,14 @@ void correctFile(char* path){
     clearConsole();
     printf("\nThe words which has not been find in the dictionary are : \n");
 
+    printDifferentsWords(file, path);
 
+    printf("\nDo you want to see the correction of unknown words ? (y or n)\n");
 
-    printf("\nDo you want to see the correction of unknown words ?\n");
+    char* answer = askForYorN();
 
-    printf("\nDo you want to correct the file with the words of the dictionary ? (every unknown word will be replaced if a word " +
-           "with a threshold of 2 is find in the dictionary)\n")
+    printf("\nDo you want to correct the file with the words of the dictionary ? (every unknown word will be replaced if a word "
+           "with a threshold of 2 is find in the dictionary)\n");
 }
 
 int askForYorN(){
