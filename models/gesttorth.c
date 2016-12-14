@@ -86,10 +86,15 @@ void putCorrectWordsInFIle (char * filePath, char * dico)
 
     List * newone = putInOrderList(getNewWords(differents,dico));
 
+    if (newone->length == 0)
+    {
+        return 0;
+    }
     List * test = putInOrderList(getEverythingFromFile(filePath));
 
 
     FILE * file = NULL;
+
     file = fopen(filePath,"w");
 
     if(file != NULL)

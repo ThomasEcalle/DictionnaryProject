@@ -161,7 +161,7 @@ void correctFile(char* path){
     clearConsole();
     if(answer == 1){
         putCorrectWordsInFIle(file, path);
-        printf("\nThe file has been corrected !\n");
+        printf("\nThe file has been corrected with the closest word !\n");
     }
 }
 
