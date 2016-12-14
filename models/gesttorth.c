@@ -86,7 +86,7 @@ void putCorrectWordsInFIle (char * filePath, char * dico)
 
     List * newone = putInOrderList(getNewWords(differents,dico));
 
-    if (newone->length == 0)
+    if (newone->first->length == 0)
     {
         return 0;
     }
