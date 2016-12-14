@@ -145,7 +145,6 @@ void fromListToDico (List * elements, char * destination)
 
      if (file != NULL)
      {
-        afficherListe(elements);
         while (count < size + 1)
          {
 
