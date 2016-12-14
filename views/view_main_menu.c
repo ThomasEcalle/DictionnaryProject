@@ -258,7 +258,6 @@ List * putListInOrder (List * list)
     Element * actual = list->first;
     while (actual->next != NULL)
     {
-        printf("%s\n",actual->chaine);
         insertion(newone,actual->chaine,0,0);
         actual = actual->next;
     }

@@ -104,7 +104,6 @@ char *researchWord(List *List, char *word, int filter)
 //            debugInt("DIFF : ", diff);
             if (diff == 0)
             {
-                debugChar("RESULT :", Element->chaine);
                 return Element->chaine;
             }
             else if (diff <= filter)
@@ -120,7 +119,6 @@ char *researchWord(List *List, char *word, int filter)
 //        debugChar("CLOSEST :", closest);
         ++i;
     }
-    debugChar("RESULT :", closest);
     return closest;
 
 }
